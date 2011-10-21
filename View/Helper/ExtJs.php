@@ -2,7 +2,7 @@
 
 namespace Sencha\ExtJsBundle\View\Helper;
 
-use \Zend_View_Helper_Abstract
+use \Zend_View_Helper_Abstract;
 use \Zend_Registry;
 use \Zend_View_Interface;
 
