@@ -1,18 +1,4 @@
 /*
-
-This file is part of Ext JS 4
-
-Copyright (c) 2011 Sencha Inc
-
-Contact:  http://www.sencha.com/contact
-
-Commercial Usage
-Licensees holding valid commercial licenses may use this file in accordance with the Commercial Software License Agreement provided with the Software or, alternatively, in accordance with the terms contained in a written agreement between you and Sencha.
-
-If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
-
-*/
-/*
  * This example features a window with a DataView from which the user can select images to add to a <div> on the page.
  * To create the example we create simple subclasses of Window, DataView and Panel. When the user selects an image
  * we just add it to the page using the insertSelectedImage function below.

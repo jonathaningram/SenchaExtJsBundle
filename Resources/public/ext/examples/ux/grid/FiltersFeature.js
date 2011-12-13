@@ -1,17 +1,3 @@
-/*
-
-This file is part of Ext JS 4
-
-Copyright (c) 2011 Sencha Inc
-
-Contact:  http://www.sencha.com/contact
-
-Commercial Usage
-Licensees holding valid commercial licenses may use this file in accordance with the Commercial Software License Agreement provided with the Software or, alternatively, in accordance with the terms contained in a written agreement between you and Sencha.
-
-If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
-
-*/
 /**
  * @class Ext.ux.grid.FiltersFeature
  * @extends Ext.grid.Feature
@@ -317,7 +303,7 @@ Ext.define('Ext.ux.grid.FiltersFeature', {
             filter = me.getMenuFilter();
 
             if (filter) {
-                menuItem.menu = filter.menu;
+                menuItem.setMenu(filter.menu, false);
                 menuItem.setChecked(filter.active);
                 // disable the menu if filter.disabled explicitly set to true
                 menuItem.setDisabled(filter.disabled === true);
@@ -748,4 +734,3 @@ filters[0][data][value]="someValue3"&
         return Ext.ClassManager.getByAlias('gridfilter.' + type);
     }
 });
-

@@ -1,17 +1,3 @@
-/*
-
-This file is part of Ext JS 4
-
-Copyright (c) 2011 Sencha Inc
-
-Contact:  http://www.sencha.com/contact
-
-Commercial Usage
-Licensees holding valid commercial licenses may use this file in accordance with the Commercial Software License Agreement provided with the Software or, alternatively, in accordance with the terms contained in a written agreement between you and Sencha.
-
-If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
-
-*/
 /**
  * @class Ext.ux.form.MultiSelect
  * @extends Ext.form.field.Base
@@ -33,7 +19,7 @@ Ext.define('Ext.ux.form.MultiSelect', {
     uses: [
         'Ext.view.BoundList',
         'Ext.form.FieldSet',
-        'Ext.ux.layout.component.form.MultiSelect',
+        //'Ext.ux.layout.component.form.MultiSelect',
         'Ext.view.DragZone',
         'Ext.view.DropZone'
     ],
@@ -133,7 +119,7 @@ Ext.define('Ext.ux.form.MultiSelect', {
      * </div></li></ul></div></li></ul></div>
      */
 
-    componentLayout: 'multiselectfield',
+    //componentLayout: 'multiselectfield',
 
     fieldBodyCls: Ext.baseCSSPrefix + 'form-multiselect-body',
 
@@ -316,6 +302,10 @@ Ext.define('Ext.ux.form.MultiSelect', {
 
     // no conversion
     valueToRaw: function(value) {
+        var delimiter = this.delimiter;
+        if (Ext.isString(value) && delimiter) {
+            value = value.split(delimiter);
+        }
         return value;
     },
 
@@ -405,6 +395,3 @@ Ext.define('Ext.ux.form.MultiSelect', {
         this.callParent();
     }
 });
-
-
-

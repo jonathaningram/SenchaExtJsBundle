@@ -1,18 +1,4 @@
 /*
-
-This file is part of Ext JS 4
-
-Copyright (c) 2011 Sencha Inc
-
-Contact:  http://www.sencha.com/contact
-
-Commercial Usage
-Licensees holding valid commercial licenses may use this file in accordance with the Commercial Software License Agreement provided with the Software or, alternatively, in accordance with the terms contained in a written agreement between you and Sencha.
-
-If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
-
-*/
-/*
  * Note that this control will most likely remain as an example, and not as a core Ext form
  * control.  However, the API will be changing in a future release and so should not yet be
  * treated as a final, stable API at this time.
@@ -35,7 +21,10 @@ Ext.define('Ext.ux.form.ItemSelector', {
     extend: 'Ext.ux.form.MultiSelect',
     alias: ['widget.itemselectorfield', 'widget.itemselector'],
     alternateClassName: ['Ext.ux.ItemSelector'],
-    requires: ['Ext.ux.layout.component.form.ItemSelector', 'Ext.button.Button'],
+    requires: [
+        //'Ext.ux.layout.component.form.ItemSelector',
+        'Ext.button.Button'
+    ],
     
     hideNavIcons:false,
 
@@ -62,7 +51,7 @@ Ext.define('Ext.ux.form.ItemSelector', {
      */
     multiselects: [],
 
-    componentLayout: 'itemselectorfield',
+    //componentLayout: 'itemselectorfield',
 
     fieldBodyCls: Ext.baseCSSPrefix + 'form-itemselector-body',
 
@@ -396,4 +385,3 @@ Ext.define('Ext.ux.form.ItemSelector', {
     }
 
 });
-

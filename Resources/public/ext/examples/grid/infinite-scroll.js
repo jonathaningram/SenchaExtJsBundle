@@ -1,17 +1,3 @@
-/*
-
-This file is part of Ext JS 4
-
-Copyright (c) 2011 Sencha Inc
-
-Contact:  http://www.sencha.com/contact
-
-Commercial Usage
-Licensees holding valid commercial licenses may use this file in accordance with the Commercial Software License Agreement provided with the Software or, alternatively, in accordance with the terms contained in a written agreement between you and Sencha.
-
-If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
-
-*/
 Ext.Loader.setConfig({enabled: true});
 
 Ext.Loader.setPath('Ext.ux', '../ux/');
@@ -37,7 +23,7 @@ Ext.onReady(function(){
     // create the Data Store
     var store = Ext.create('Ext.data.Store', {
         id: 'store',
-        pageSize: 200,
+        pageSize: 400,
         model: 'ForumThread',
         remoteSort: true,
         // allow the grid to interact with the paging scroller by buffering
@@ -47,9 +33,6 @@ Ext.onReady(function(){
             // this page, an HttpProxy would be better
             type: 'jsonp',
             url: 'http://www.sencha.com/forum/remote_topics/index.php',
-            extraParams: {
-                total: 50000
-            },
             reader: {
                 root: 'topics',
                 totalProperty: 'totalCount'
@@ -72,7 +55,6 @@ Ext.onReady(function(){
             record.data.forumid
         );
     }
-
 
     var grid = Ext.create('Ext.grid.Panel', {
         width: 700,
@@ -125,9 +107,48 @@ Ext.onReady(function(){
         renderTo: Ext.getBody()
     });
 
+    /* Debug code to instrument the scroll gestures on the buffered grid.
+    grid.view.on({
+        scroll: updateGridData,
+        element: 'el'
+    })
+    store.on({
+        load: updateGridData,
+        datachanged: updateGridData
+    })
+    var pg = Ext.create('Ext.grid.property.Grid', {
+        style: {
+            position: 'absolute'
+        },
+        x: 735,
+        y: 188,
+        width: 500,
+        width: 300,
+        height: 400,
+        source: getProperties(),
+        renderTo: document.body
+    });
+    function updateGridData() {
+        pg.setSource(getProperties());
+    }
+    function getProperties() {
+        var t = grid.view.el.child('table', true);
+        return {
+            "Store Total count": store.getTotalCount(),
+            "Store count": store.getCount(),
+            "Table size": grid.view.el.query('tr').length,
+            "Guaranteed start": store.guaranteedStart,
+            "Guaranteed end": store.guaranteedEnd,
+            "Prefetch start": store.prefetchData.items.length ? store.prefetchData.items[0].index: 'none',
+            "Prefetch end": store.prefetchData.items.length ? store.prefetchData.items[store.prefetchData.items.length - 1].index : 'none',
+            "View scrollTop": grid.view.el.dom.scrollTop,
+            "Table top position": t ? t.style.top : ''
+        };
+    }
+    */
+
     // trigger the data store load
     store.guaranteeRange(0, 199);
 });
-
 
 

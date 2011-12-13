@@ -1,71 +1,46 @@
-/*
-
-This file is part of Ext JS 4
-
-Copyright (c) 2011 Sencha Inc
-
-Contact:  http://www.sencha.com/contact
-
-Commercial Usage
-Licensees holding valid commercial licenses may use this file in accordance with the Commercial Software License Agreement provided with the Software or, alternatively, in accordance with the terms contained in a written agreement between you and Sencha.
-
-If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
-
-*/
 Ext.onReady(function() {
-    Ext.create('Ext.draw.Component', {
+    Ext.create('Ext.draw.Text', {
         renderTo: Ext.get('text-ph'),
-        viewBox: false,
-        autoSize: true,
         height: 350,
         padding: 20,
-        items: [{
-            type: 'text',
-            text: 'With Ext JS 4.0 Drawing',
+        degrees: 45,
+        text: 'With Ext JS 4.0 Drawing',
+        textStyle: {
             fill: '#000',
-            font: '18px Arial',
-            rotate: {
-                degrees: 45
-            }
-        }]
+            font: '18px Arial'
+        }
     });
-    
-    Ext.create('Ext.draw.Component', {
+
+    Ext.create('Ext.draw.Text', {
         renderTo: Ext.get('text-ph'),
-        viewBox: false,
-        autoSize: true,
         height: 350,
         padding: 20,
-        items: [{
-            type: 'text',
-            text: 'Creating a rotated Text component',
+        degrees: 90,
+        text: 'Creating a rotated Text component',
+        textStyle: {
             fill: '#000',
-            font: '18px Arial',
-            rotate: {
-                degrees: 90
-            }
-        }]
+            font: '18px Arial'
+        }
     });
-    
-    Ext.create('Ext.draw.Component', {
+
+    Ext.create('Ext.draw.Text', {
         renderTo: Ext.get('text-ph'),
         id: 'snappy',
-        viewBox: false,
-        height: 350,
         width: 200,
+        height: 350,
+        autoSize: false,
+        viewBox: false,
         padding: 20,
-        items: [{
-            type: 'text',
-            text: 'Is a snap!',
+        degrees: 315,
+        text: 'Is a snap!',
+        textStyle: {
+            padding: 20,
             fill: '#000',
             font: '18px Arial',
-            y: 50,
-            rotate: {
-                degrees: 315
-            }
-        }]
+            y: 50
+        }
     });
-    
+
     Ext.create('Ext.slider.Single', {
         renderTo: Ext.get('slider-ph'),
         hideLabel: true,

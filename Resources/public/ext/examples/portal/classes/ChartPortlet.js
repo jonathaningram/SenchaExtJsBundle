@@ -1,17 +1,3 @@
-/*
-
-This file is part of Ext JS 4
-
-Copyright (c) 2011 Sencha Inc
-
-Contact:  http://www.sencha.com/contact
-
-Commercial Usage
-Licensees holding valid commercial licenses may use this file in accordance with the Commercial Software License Agreement provided with the Software or, alternatively, in accordance with the terms contained in a written agreement between you and Sencha.
-
-If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
-
-*/
 Ext.define('Ext.app.ChartPortlet', {
 
     extend: 'Ext.panel.Panel',
@@ -34,7 +20,7 @@ Ext.define('Ext.app.ChartPortlet', {
             i;
         for (i = 1; i < 50; i++) {
             data.push({
-                name: 'x' + i,
+                name: 'x',
                 sp500: data[i - 1].sp500 + ((Math.floor(Math.random() * 2) % 2) ? -1 : 1) * Math.floor(Math.random() * 7),
                 djia: data[i - 1].djia + ((Math.floor(Math.random() * 2) % 2) ? -1 : 1) * Math.floor(Math.random() * 7)
             });
@@ -82,7 +68,7 @@ Ext.define('Ext.app.ChartPortlet', {
                     lineWidth: 1,
                     showMarkers: false,
                     fill: true,
-                    axis: ['left', 'bottom'],
+                    axis: 'left',
                     xField: 'name',
                     yField: 'djia',
                     style: {
@@ -92,7 +78,7 @@ Ext.define('Ext.app.ChartPortlet', {
                     type: 'line',
                     lineWidth: 1,
                     showMarkers: false,
-                    axis: ['right', 'bottom'],
+                    axis: 'right',
                     xField: 'name',
                     yField: 'sp500',
                     style: {
@@ -105,4 +91,3 @@ Ext.define('Ext.app.ChartPortlet', {
         this.callParent(arguments);
     }
 });
-

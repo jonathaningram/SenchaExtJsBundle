@@ -16,6 +16,11 @@
         margin-bottom: 5px;
     }
     
+    // No margins when inside an Editor
+    .#{$prefix}editor .#{$prefix}form-item {
+        margin: 0;
+    }
+    
     .#{$prefix}form-item-label {
         float: left;
         padding: 3px 0 0;

@@ -2,6 +2,13 @@
     {
         "title": "Combination Examples",
         "items": [
+			{
+                "text": "Kitchen Sink",
+                "url": "kitchensink/index.html",
+                "icon": "kitchensink.gif",
+                "desc": "Showcase of Ext JS components using the new Neptune theme in Ext JS 4.1.",
+                "status": "new"
+            },
             {
                 "text": "Feed Viewer",
                 "url": "feed-viewer/feed-viewer.html",

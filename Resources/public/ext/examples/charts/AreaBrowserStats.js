@@ -1,17 +1,3 @@
-/*
-
-This file is part of Ext JS 4
-
-Copyright (c) 2011 Sencha Inc
-
-Contact:  http://www.sencha.com/contact
-
-Commercial Usage
-Licensees holding valid commercial licenses may use this file in accordance with the Commercial Software License Agreement provided with the Software or, alternatively, in accordance with the terms contained in a written agreement between you and Sencha.
-
-If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
-
-*/
 Ext.require('Ext.chart.*');
 Ext.require('Ext.data.*');
 Ext.require('Ext.Window');
@@ -238,7 +224,7 @@ var jsonData = [
 ];
 
 Ext.onReady(function () {
-    var fields = ['IE', 'Chrome', 'Firefox', 'Safari', 'Opera', 'Other'];
+    var fields = ['date', 'IE', 'Chrome', 'Firefox', 'Safari', 'Opera', 'Other'];
 
     var browserStore = Ext.create('Ext.data.JsonStore', {
         fields: fields,
@@ -285,7 +271,7 @@ Ext.onReady(function () {
             axes: [{
                 type: 'Numeric',
                 position: 'left',
-                fields: fields,
+                fields: fields.slice(1),
                 title: 'Usage %',
                 grid: true,
                 decimals: 0,
@@ -317,7 +303,7 @@ Ext.onReady(function () {
                   }
                 },
                 xField: 'name',
-                yField: fields,
+                yField: fields.slice(1),
                 style: {
                     lineWidth: 1,
                     stroke: '#666',
@@ -327,4 +313,3 @@ Ext.onReady(function () {
         }
     });
 });
-

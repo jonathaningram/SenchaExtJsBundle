@@ -1,17 +1,3 @@
-/*
-
-This file is part of Ext JS 4
-
-Copyright (c) 2011 Sencha Inc
-
-Contact:  http://www.sencha.com/contact
-
-Commercial Usage
-Licensees holding valid commercial licenses may use this file in accordance with the Commercial Software License Agreement provided with the Software or, alternatively, in accordance with the terms contained in a written agreement between you and Sencha.
-
-If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
-
-*/
 /*!
 * Ext JS Library 4.0
 * Copyright(c) 2006-2011 Sencha Inc.
@@ -57,7 +43,7 @@ Ext.define('MyDesktop.SystemStatus', {
 
         me.cpuLoadData = [];
         me.cpuLoadStore = Ext.create('store.json', {
-            fields: ['core1', 'core2']
+            fields: ['core1', 'core2', 'time']
         });
 
         me.memoryArray = ['Wired', 'Active', 'Inactive', 'Free'];
@@ -172,7 +158,7 @@ Ext.define('MyDesktop.SystemStatus', {
                 lineWidth: 4,
                 showMarkers: false,
                 fill: true,
-                axis: 'right',
+                axis: 'left',
                 xField: 'time',
                 yField: 'core1',
                 style: {
@@ -213,7 +199,7 @@ Ext.define('MyDesktop.SystemStatus', {
                 lineWidth: 4,
                 showMarkers: false,
                 fill: true,
-                axis: 'right',
+                axis: 'left',
                 xField: 'time',
                 yField: 'core2',
                 style: {
@@ -446,4 +432,3 @@ Ext.define('MyDesktop.SystemStatus', {
         }, me.refreshRate);
     }
 });
-

@@ -1,17 +1,3 @@
-/*
-
-This file is part of Ext JS 4
-
-Copyright (c) 2011 Sencha Inc
-
-Contact:  http://www.sencha.com/contact
-
-Commercial Usage
-Licensees holding valid commercial licenses may use this file in accordance with the Commercial Software License Agreement provided with the Software or, alternatively, in accordance with the terms contained in a written agreement between you and Sencha.
-
-If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
-
-*/
 /**
  * @class Ext.ux.CheckColumn
  * @extends Ext.grid.column.Column
@@ -43,6 +29,8 @@ var grid = Ext.create('Ext.grid.Panel', {
 Ext.define('Ext.ux.CheckColumn', {
     extend: 'Ext.grid.column.Column',
     alias: 'widget.checkcolumn',
+
+    tdCls: Ext.baseCSSPrefix + 'grid-cell-checkcolumn',
     
     constructor: function() {
         this.addEvents(
@@ -89,4 +77,3 @@ Ext.define('Ext.ux.CheckColumn', {
         return '<div class="' + cls.join(' ') + '">&#160;</div>';
     }
 });
-

@@ -1,10 +1,10 @@
 {
-    "projectName": "Example - Desktop",
+    "projectName": "Ext JS 4 Example - Desktop",
     "licenseText": "Copyright(c) 2011 Sencha Inc.\nlicensing@sencha.com",
     "builds": [
         {
-            "name": "All Classes Needed",
-            "target": "classes.js",
+            "name": "All Dependencies",
+            "target": "all-classes.js",
             "compress": true,
             "files": [
                 {
@@ -18,10 +18,6 @@
                 {
                     "path": "../../../platform/src/chart/",
                     "name": "Callout.js"
-                },
-                {
-                    "path": "../../../platform/src/chart/",
-                    "name": "Mask.js"
                 },
                 {
                     "path": "../../../platform/src/chart/",
@@ -64,6 +60,10 @@
                     "name": "validations.js"
                 },
                 {
+                    "path": "../../../platform/src/util/",
+                    "name": "Bindable.js"
+                },
+                {
                     "path": "../../../platform/src/draw/",
                     "name": "Color.js"
                 },
@@ -92,20 +92,12 @@
                     "name": "Offset.js"
                 },
                 {
-                    "path": "../../../platform/src/",
-                    "name": "ComponentQuery.js"
+                    "path": "../../src/util/",
+                    "name": "Floating.js"
                 },
                 {
                     "path": "../../../platform/src/util/",
-                    "name": "HashMap.js"
-                },
-                {
-                    "path": "../../src/util/",
-                    "name": "KeyNav.js"
-                },
-                {
-                    "path": "../../src/util/",
-                    "name": "Floating.js"
+                    "name": "ElementContainer.js"
                 },
                 {
                     "path": "../../src/layout/container/boxOverflow/",
@@ -116,11 +108,7 @@
                     "name": "Scroller.js"
                 },
                 {
-                    "path": "../../../platform/src/",
-                    "name": "AbstractManager.js"
-                },
-                {
-                    "path": "../../../platform/src/data/",
+                    "path": "../../../platform/src/data/association/",
                     "name": "Association.js"
                 },
                 {
@@ -140,6 +128,10 @@
                     "name": "Animate.js"
                 },
                 {
+                    "path": "../../src/util/",
+                    "name": "KeyNav.js"
+                },
+                {
                     "path": "../../../platform/src/util/",
                     "name": "Filter.js"
                 },
@@ -152,8 +144,24 @@
                     "name": "Proxy.js"
                 },
                 {
-                    "path": "../../../platform/src/layout/",
-                    "name": "Layout.js"
+                    "path": "../../../platform/src/",
+                    "name": "XTemplateParser.js"
+                },
+                {
+                    "path": "../../../platform/src/util/",
+                    "name": "Renderable.js"
+                },
+                {
+                    "path": "../../../platform/src/",
+                    "name": "ComponentQuery.js"
+                },
+                {
+                    "path": "../../../platform/src/util/",
+                    "name": "ProtoElement.js"
+                },
+                {
+                    "path": "../../../platform/src/util/",
+                    "name": "HashMap.js"
                 },
                 {
                     "path": "../../../platform/src/data/",
@@ -166,10 +174,6 @@
                 {
                     "path": "../../../platform/src/fx/",
                     "name": "Queue.js"
-                },
-                {
-                    "path": "../../src/dd/",
-                    "name": "StatusProxy.js"
                 },
                 {
                     "path": "../../../platform/src/fx/target/",
@@ -221,55 +225,19 @@
                 },
                 {
                     "path": "../../../platform/src/",
-                    "name": "XTemplate.js"
+                    "name": "XTemplateCompiler.js"
                 },
                 {
                     "path": "../../../platform/src/",
-                    "name": "ModelManager.js"
+                    "name": "XTemplate.js"
                 },
                 {
                     "path": "../../src/form/",
                     "name": "Labelable.js"
                 },
                 {
-                    "path": "../../../platform/src/",
-                    "name": "ComponentManager.js"
-                },
-                {
-                    "path": "../../src/",
-                    "name": "FocusManager.js"
-                },
-                {
-                    "path": "../../../platform/src/layout/component/",
-                    "name": "Component.js"
-                },
-                {
-                    "path": "../../src/layout/component/",
-                    "name": "Button.js"
-                },
-                {
-                    "path": "../../src/layout/component/",
-                    "name": "ProgressBar.js"
-                },
-                {
-                    "path": "../../src/layout/component/field/",
-                    "name": "Field.js"
-                },
-                {
-                    "path": "../../src/layout/component/field/",
-                    "name": "Text.js"
-                },
-                {
-                    "path": "../../src/layout/component/field/",
-                    "name": "TextArea.js"
-                },
-                {
-                    "path": "../../src/layout/component/field/",
-                    "name": "HtmlEditor.js"
-                },
-                {
-                    "path": "../../../platform/src/layout/container/",
-                    "name": "AbstractContainer.js"
+                    "path": "../../../platform/src/layout/",
+                    "name": "Layout.js"
                 },
                 {
                     "path": "../../src/layout/container/",
@@ -282,6 +250,14 @@
                 {
                     "path": "../../src/dd/",
                     "name": "DragDropManager.js"
+                },
+                {
+                    "path": "../../../platform/src/",
+                    "name": "AbstractManager.js"
+                },
+                {
+                    "path": "../../../platform/src/",
+                    "name": "ModelManager.js"
                 },
                 {
                     "path": "../../../platform/src/data/",
@@ -352,8 +328,60 @@
                     "name": "Grouper.js"
                 },
                 {
+                    "path": "../../src/layout/container/",
+                    "name": "Fit.js"
+                },
+                {
+                    "path": "../../src/layout/container/",
+                    "name": "Card.js"
+                },
+                {
                     "path": "../../../platform/src/layout/container/",
                     "name": "Auto.js"
+                },
+                {
+                    "path": "../../../platform/src/container/",
+                    "name": "DockingContainer.js"
+                },
+                {
+                    "path": "../../../platform/src/layout/component/",
+                    "name": "Component.js"
+                },
+                {
+                    "path": "../../src/layout/component/field/",
+                    "name": "Field.js"
+                },
+                {
+                    "path": "../../src/layout/component/field/",
+                    "name": "Text.js"
+                },
+                {
+                    "path": "../../src/layout/component/field/",
+                    "name": "TextArea.js"
+                },
+                {
+                    "path": "../../src/layout/component/field/",
+                    "name": "HtmlEditor.js"
+                },
+                {
+                    "path": "../../../platform/src/layout/component/",
+                    "name": "Auto.js"
+                },
+                {
+                    "path": "../../src/layout/component/",
+                    "name": "Button.js"
+                },
+                {
+                    "path": "../../src/layout/component/",
+                    "name": "ProgressBar.js"
+                },
+                {
+                    "path": "../../../platform/src/layout/component/",
+                    "name": "Draw.js"
+                },
+                {
+                    "path": "../../src/grid/",
+                    "name": "ColumnComponentLayout.js"
                 },
                 {
                     "path": "../../../platform/src/layout/component/",
@@ -364,12 +392,8 @@
                     "name": "Dock.js"
                 },
                 {
-                    "path": "../../../platform/src/layout/component/",
-                    "name": "Auto.js"
-                },
-                {
-                    "path": "../../../platform/src/layout/component/",
-                    "name": "Draw.js"
+                    "path": "../../../platform/src/",
+                    "name": "ComponentManager.js"
                 },
                 {
                     "path": "../../../platform/src/fx/target/",
@@ -456,6 +480,10 @@
                     "name": "MaskLayer.js"
                 },
                 {
+                    "path": "../../../platform/src/chart/",
+                    "name": "Mask.js"
+                },
+                {
                     "path": "../../src/toolbar/",
                     "name": "Spacer.js"
                 },
@@ -540,18 +568,6 @@
                     "name": "Container.js"
                 },
                 {
-                    "path": "../../src/grid/column/",
-                    "name": "Column.js"
-                },
-                {
-                    "path": "../../src/grid/",
-                    "name": "RowNumberer.js"
-                },
-                {
-                    "path": "../../src/tree/",
-                    "name": "Column.js"
-                },
-                {
                     "path": "../../src/tab/",
                     "name": "Tab.js"
                 },
@@ -592,24 +608,28 @@
                     "name": "AbstractPanel.js"
                 },
                 {
+                    "path": "../../src/grid/",
+                    "name": "ColumnLayout.js"
+                },
+                {
+                    "path": "../../src/grid/column/",
+                    "name": "Column.js"
+                },
+                {
+                    "path": "../../src/grid/",
+                    "name": "RowNumberer.js"
+                },
+                {
+                    "path": "../../src/tree/",
+                    "name": "Column.js"
+                },
+                {
+                    "path": "../../src/dd/",
+                    "name": "StatusProxy.js"
+                },
+                {
                     "path": "../../../platform/src/data/writer/",
                     "name": "Json.js"
-                },
-                {
-                    "path": "../../../platform/src/layout/container/",
-                    "name": "AbstractFit.js"
-                },
-                {
-                    "path": "../../src/layout/container/",
-                    "name": "Fit.js"
-                },
-                {
-                    "path": "../../../platform/src/layout/container/",
-                    "name": "AbstractCard.js"
-                },
-                {
-                    "path": "../../src/layout/container/",
-                    "name": "Card.js"
                 },
                 {
                     "path": "../../../platform/src/data/reader/",
@@ -852,6 +872,14 @@
                     "name": "Video.js"
                 },
                 {
+                    "path": "../../../platform/src/draw/engine/",
+                    "name": "SvgExporter.js"
+                },
+                {
+                    "path": "../../../platform/src/draw/engine/",
+                    "name": "ImageExporter.js"
+                },
+                {
                     "path": "../../../platform/src/",
                     "name": "PluginManager.js"
                 },
@@ -868,8 +896,12 @@
                     "name": "CSS.js"
                 },
                 {
-                    "path": "../../src/grid/",
-                    "name": "ColumnLayout.js"
+                    "path": "../../src/layout/component/",
+                    "name": "Body.js"
+                },
+                {
+                    "path": "../../src/",
+                    "name": "Img.js"
                 },
                 {
                     "path": "../../src/grid/plugin/",
@@ -896,24 +928,20 @@
                     "name": "Wallpaper.js"
                 },
                 {
-                    "path": "js/",
-                    "name": "FitAllLayout.js"
-                },
-                {
                     "path": "",
                     "name": "WallpaperModel.js"
                 },
                 {
                     "path": "../../src/grid/",
-                    "name": "Scroller.js"
+                    "name": "PagingScroller.js"
+                },
+                {
+                    "path": "../../../platform/src/util/",
+                    "name": "Queue.js"
                 },
                 {
                     "path": "../../src/menu/",
                     "name": "Item.js"
-                },
-                {
-                    "path": "../../src/menu/",
-                    "name": "KeyNav.js"
                 },
                 {
                     "path": "../../../platform/src/draw/",
@@ -940,8 +968,24 @@
                     "name": "CheckboxManager.js"
                 },
                 {
+                    "path": "../../src/layout/component/field/",
+                    "name": "BoxLabelField.js"
+                },
+                {
+                    "path": "../../src/resizer/",
+                    "name": "BorderSplitter.js"
+                },
+                {
                     "path": "../../src/grid/",
                     "name": "LockingView.js"
+                },
+                {
+                    "path": "../../../platform/src/layout/",
+                    "name": "ClassList.js"
+                },
+                {
+                    "path": "../../src/focus/",
+                    "name": "FocusManager.js"
                 },
                 {
                     "path": "../../../platform/src/draw/",
@@ -976,10 +1020,6 @@
                     "name": "Separator.js"
                 },
                 {
-                    "path": "../../src/menu/",
-                    "name": "Menu.js"
-                },
-                {
                     "path": "../../../platform/src/data/proxy/",
                     "name": "Memory.js"
                 },
@@ -994,6 +1034,22 @@
                 {
                     "path": "../../src/grid/",
                     "name": "Lockable.js"
+                },
+                {
+                    "path": "../../../platform/src/layout/",
+                    "name": "ContextItem.js"
+                },
+                {
+                    "path": "../../../platform/src/layout/",
+                    "name": "Context.js"
+                },
+                {
+                    "path": "../../src/menu/",
+                    "name": "KeyNav.js"
+                },
+                {
+                    "path": "../../src/menu/",
+                    "name": "Menu.js"
                 },
                 {
                     "path": "../../../platform/src/draw/",
@@ -1042,6 +1098,10 @@
                 {
                     "path": "../../src/resizer/",
                     "name": "SplitterTracker.js"
+                },
+                {
+                    "path": "../../src/resizer/",
+                    "name": "BorderSplitterTracker.js"
                 },
                 {
                     "path": "../../src/",
