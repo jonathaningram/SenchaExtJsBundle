@@ -20,9 +20,7 @@ Ext.define('MyDesktop.SystemStatus', {
         // No launcher means we don't appear on the Start Menu...
 //        this.launcher = {
 //            text: 'SystemStatus',
-//            iconCls:'cpustats',
-//            handler : this.createWindow,
-//            scope: this
+//            iconCls:'cpustats'
 //        };
 
         Ext.chart.theme.Memory = Ext.extend(Ext.chart.theme.Base, {
@@ -69,7 +67,13 @@ Ext.define('MyDesktop.SystemStatus', {
             animCollapse:false,
             constrainHeader:true,
             border: false,
-            layout: 'fit',
+            layout: {
+                type: 'hbox',
+                align: 'stretch'    
+            },
+            bodyStyle: {
+                'background-color': '#FFF'
+            },
             listeners: {
                 afterrender: {
                     fn: me.updateCharts,
@@ -82,38 +86,27 @@ Ext.define('MyDesktop.SystemStatus', {
                 scope: me
             },
             items: [{
-                xtype: 'panel',
+                flex: 1,
+                xtype: 'container',
                 layout: {
-                    type: 'hbox',
+                    type: 'vbox',
                     align: 'stretch'
                 },
-                items: [{
-                    flex: 1,
-                    height: 600,
-                    width: 400,
-                    xtype: 'container',
-                    layout: {
-                        type: 'vbox',
-                        align: 'stretch'
-                    },
-                    items: [
-                        me.createCpu1LoadChart(),
-                        me.createCpu2LoadChart()
-                    ]
-                }, {
-                    flex: 1,
-                    width: 400,
-                    height: 600,
-                    xtype: 'container',
-                    layout: {
-                        type: 'vbox',
-                        align: 'stretch'
-                    },
-                    items: [
-                        me.createMemoryPieChart(),
-                        me.createProcessChart()
-                    ]
-                }]
+                items: [
+                    me.createCpu1LoadChart(),
+                    me.createCpu2LoadChart()
+                ]
+            }, {
+                flex: 1,
+                xtype: 'container',
+                layout: {
+                    type: 'vbox',
+                    align: 'stretch'
+                },
+                items: [
+                    me.createMemoryPieChart(),
+                    me.createProcessChart()
+                ]
             }]
         });
     },
@@ -123,7 +116,6 @@ Ext.define('MyDesktop.SystemStatus', {
         if (!win) {
             win = this.createNewWindow();
         }
-        win.show();
         return win;
     },
 

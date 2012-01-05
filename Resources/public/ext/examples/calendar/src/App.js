@@ -25,6 +25,9 @@ Ext.define('Ext.calendar.App', {
     ],
     
     constructor : function() {
+        // Minor workaround for OSX Lion scrollbars
+        this.checkScrollOffset();
+        
         // This is an example calendar store that enables event color-coding
         this.calendarStore = Ext.create('Ext.calendar.data.MemoryCalendarStore', {
             data: Ext.create('Ext.calendar.data.Calendars')
@@ -283,6 +286,23 @@ Ext.define('Ext.calendar.App', {
     },
     clearMsg: function(){
         Ext.fly('app-msg').update('').addCls('x-hidden');
+    },
+    
+    // OSX Lion introduced dynamic scrollbars that do not take up space in the
+    // body. Since certain aspects of the layout are calculated and rely on
+    // scrollbar width, we add a special class if needed so that we can apply
+    // static style rules rather than recalculate sizes on each resize.
+    checkScrollOffset: function() {
+        var scrollbarWidth = Ext.getScrollbarSize ? Ext.getScrollbarSize().width : Ext.getScrollBarWidth();
+        
+        // We check for less than 3 because the Ext scrollbar measurement gets
+        // slightly padded (not sure the reason), so it's never returned as 0.
+        if (scrollbarWidth < 3) {
+            Ext.getBody().addCls('x-no-scrollbar');
+        }
+        if (Ext.isWindows) {
+            Ext.getBody().addCls('x-win');
+        }
     }
 },
 function() {

@@ -1,9 +1,8 @@
 /**
  * @author Don Griffin
- * @class Ext.ux.ajax.Simlet
  *
  * This is a base class for more advanced "simlets" (simulated servers). A simlet is asked
- * to provide a response given a {@link SimXhr} instance.
+ * to provide a response given a {@link Ext.ux.ajax.SimXhr} instance.
  */
 Ext.define('Ext.ux.ajax.Simlet', function () {
     var urlRegex = /([^?#]*)(#.*)?$/,
@@ -75,14 +74,17 @@ Ext.define('Ext.ux.ajax.Simlet', function () {
             return ret;
         },
 
+        doRedirect: function (ctx) {
+            return false;
+        },
+
         /**
          * Performs the action requested by the given XHR and returns an object to be applied
          * on to the XHR (containing `status`, `responseText`, etc.). For the most part,
          * this is delegated to `doMethod` methods on this class, such as `doGet`.
          *
-         * @param {SimXhr} xhr The simulated XMLHttpRequest instance.
+         * @param {Ext.ux.ajax.SimXhr} xhr The simulated XMLHttpRequest instance.
          * @returns {Object} The response properties to add to the XMLHttpRequest.
-         * @markdown
          */
         exec: function (xhr) {
             var me = this,
@@ -91,15 +93,40 @@ Ext.define('Ext.ux.ajax.Simlet', function () {
                 fn = me[method];
 
             if (fn) {
-                ret = fn.call(me, {
-                        xhr: xhr,
-                        params: me.parseQueryString(xhr.url)
-                    });
+                ret = fn.call(me, me.getCtx(xhr.method, xhr.url, xhr));
             } else {
                 ret = { status: 405, statusText: 'Method Not Allowed' };
             }
 
             return ret;
+        },
+
+        getCtx: function (method, url, xhr) {
+            return {
+                method: method,
+                params: this.parseQueryString(url),
+                url: url,
+                xhr: xhr
+            };
+        },
+
+        openRequest: function (method, url, options, async) {
+            var ctx = this.getCtx(method, url),
+                redirect = this.doRedirect(ctx),
+                xhr;
+
+            if (redirect) {
+                xhr = redirect;
+            } else {
+                xhr = new Ext.ux.ajax.SimXhr({
+                    mgr: this.manager,
+                    simlet: this,
+                    options: options
+                });
+                xhr.open(method, url, async);
+            }
+
+            return xhr;
         },
 
         parseQueryString : function (str) {
@@ -129,6 +156,26 @@ Ext.define('Ext.ux.ajax.Simlet', function () {
             }
 
             return ret;
+        },
+
+        redirect: function (method, url, params) {
+            switch (arguments.length) {
+                case 2:
+                    if (typeof url == 'string') {
+                        break;
+                    }
+                    params = url;
+                    // fall...
+                case 1:
+                    url = method;
+                    method = 'GET';
+                    break;
+            }
+
+            if (params) {
+                url = Ext.urlAppend(url, Ext.Object.toQueryString(params));
+            }
+            return this.manager.openRequest(method, url);
         }
     };
 }());

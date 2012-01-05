@@ -216,7 +216,8 @@ Ext.onReady(function() {
     });
     
     var groupingFeature = Ext.create('Ext.grid.feature.Grouping',{
-        groupHeaderTpl: 'Cuisine: {name} ({rows.length} Item{[values.rows.length > 1 ? "s" : ""]})'
+        groupHeaderTpl: 'Cuisine: {name} ({rows.length} Item{[values.rows.length > 1 ? "s" : ""]})',
+        hideGroupedHeader: true
     });
 
     var grid = Ext.create('Ext.grid.Panel', {

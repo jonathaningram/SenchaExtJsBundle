@@ -23,7 +23,6 @@ Ext.define('Ext.calendar.form.field.CalendarCombo', {
     queryMode: 'local',
     forceSelection: true,
     selectOnFocus: true,
-    width: 200,
     
     // private
     defaultCls: 'ext-color-default',

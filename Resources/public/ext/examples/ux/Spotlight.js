@@ -100,7 +100,7 @@ Ext.define('Ext.ux.Spotlight', {
     /**
      * Resizes the spotlight depending on the arguments
      * @param {Boolean} animate True to animate the changing of the bounds
-     * @param {Boolean} animate True to reverse the animation
+     * @param {Boolean} reverse True to reverse the animation
      */
     applyBounds: function(animate, reverse) {
         var me = this,

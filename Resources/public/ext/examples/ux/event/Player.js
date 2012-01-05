@@ -1,13 +1,10 @@
 /**
- * @class Ext.ux.event.Player
- * @extends Ext.ux.event.Driver
- *
  * This class manages the playback of an array of "event descriptors". For details on the
- * contents of an "event descriptor", see {@link Recorder}. The events recorded by the
- * {@link Recorder} class are designed to serve as input for this class.
+ * contents of an "event descriptor", see {@link Ext.ux.event.Recorder}. The events recorded by the
+ * {@link Ext.ux.event.Recorder} class are designed to serve as input for this class.
  * 
  * The simplest use of this class is to instantiate it with an {@link #eventQueue} and call
- * {@link #start}. Like so:
+ * {@link #method-start}. Like so:
  *
  *      var player = Ext.create('Ext.ux.event.Player', {
  *          eventQueue: [ ... ],
@@ -83,15 +80,13 @@
  *              async = true; // let the callback know that we have gone async
  *          }
  *      }
- *
- * @markdown
  */
 Ext.define('Ext.ux.event.Player', {
     extend: 'Ext.ux.event.Driver',
 
     /**
      * @cfg {Array} eventQueue The event queue to playback. This must be provided before
-     * the {@link #start} method is called.
+     * the {@link #method-start} method is called.
      */
 
     /**

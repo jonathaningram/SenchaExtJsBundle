@@ -50,12 +50,11 @@ Ext.onReady(function() {
 
     Ext.createWidget('panel', {
         renderTo: Ext.getBody(),
-
-        layout: 'table',
         id: 'demo-ct',
         border: false,
 
-        layoutConfig: {
+        layout: {
+            type: 'table',
             columns: 3
         },
 

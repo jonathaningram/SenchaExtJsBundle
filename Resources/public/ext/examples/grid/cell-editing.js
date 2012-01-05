@@ -77,8 +77,7 @@ Ext.onReady(function(){
             header: 'Light',
             dataIndex: 'light',
             width: 130,
-            editor: {
-                xtype: 'combobox',
+            editor: new Ext.form.field.ComboBox({
                 typeAhead: true,
                 triggerAction: 'all',
                 selectOnTab: true,
@@ -91,7 +90,7 @@ Ext.onReady(function(){
                 ],
                 lazyRender: true,
                 listClass: 'x-combo-list-small'
-            }
+            })
         }, {
             header: 'Price',
             dataIndex: 'price',

@@ -1,6 +1,5 @@
 /**
- * @class Ext.ux.event.Driver
- * This is the base class for {@link Recorder} and {@link Player}.
+ * This is the base class for {@link Ext.ux.event.Recorder} and {@link Ext.ux.event.Player}.
  */
 Ext.define('Ext.ux.event.Driver', {
     active: null,

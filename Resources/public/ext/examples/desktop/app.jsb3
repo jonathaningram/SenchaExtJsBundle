@@ -348,6 +348,22 @@
                     "name": "Component.js"
                 },
                 {
+                    "path": "../../src/layout/component/",
+                    "name": "Dock.js"
+                },
+                {
+                    "path": "../../../platform/src/layout/component/",
+                    "name": "Auto.js"
+                },
+                {
+                    "path": "../../src/layout/component/",
+                    "name": "Button.js"
+                },
+                {
+                    "path": "../../src/layout/component/",
+                    "name": "ProgressBar.js"
+                },
+                {
                     "path": "../../src/layout/component/field/",
                     "name": "Field.js"
                 },
@@ -365,31 +381,11 @@
                 },
                 {
                     "path": "../../../platform/src/layout/component/",
-                    "name": "Auto.js"
-                },
-                {
-                    "path": "../../src/layout/component/",
-                    "name": "Button.js"
-                },
-                {
-                    "path": "../../src/layout/component/",
-                    "name": "ProgressBar.js"
-                },
-                {
-                    "path": "../../../platform/src/layout/component/",
                     "name": "Draw.js"
                 },
                 {
                     "path": "../../src/grid/",
                     "name": "ColumnComponentLayout.js"
-                },
-                {
-                    "path": "../../../platform/src/layout/component/",
-                    "name": "AbstractDock.js"
-                },
-                {
-                    "path": "../../src/layout/component/",
-                    "name": "Dock.js"
                 },
                 {
                     "path": "../../../platform/src/",
@@ -401,7 +397,15 @@
                 },
                 {
                     "path": "../../../platform/src/fx/target/",
+                    "name": "ElementCSS.js"
+                },
+                {
+                    "path": "../../../platform/src/fx/target/",
                     "name": "CompositeElement.js"
+                },
+                {
+                    "path": "../../../platform/src/fx/target/",
+                    "name": "CompositeElementCSS.js"
                 },
                 {
                     "path": "../../../platform/src/fx/target/",
@@ -430,10 +434,6 @@
                 {
                     "path": "../../../platform/src/chart/",
                     "name": "Highlight.js"
-                },
-                {
-                    "path": "../../src/layout/component/",
-                    "name": "Tip.js"
                 },
                 {
                     "path": "../../src/layout/component/",
@@ -880,6 +880,10 @@
                     "name": "ImageExporter.js"
                 },
                 {
+                    "path": "../../src/util/",
+                    "name": "CSS.js"
+                },
+                {
                     "path": "../../../platform/src/",
                     "name": "PluginManager.js"
                 },
@@ -890,10 +894,6 @@
                 {
                     "path": "../../src/panel/",
                     "name": "Tool.js"
-                },
-                {
-                    "path": "../../src/util/",
-                    "name": "CSS.js"
                 },
                 {
                     "path": "../../src/layout/component/",
@@ -968,10 +968,6 @@
                     "name": "CheckboxManager.js"
                 },
                 {
-                    "path": "../../src/layout/component/field/",
-                    "name": "BoxLabelField.js"
-                },
-                {
                     "path": "../../src/resizer/",
                     "name": "BorderSplitter.js"
                 },
@@ -984,7 +980,7 @@
                     "name": "ClassList.js"
                 },
                 {
-                    "path": "../../src/focus/",
+                    "path": "../../src/",
                     "name": "FocusManager.js"
                 },
                 {

@@ -19,7 +19,6 @@ Ext.define('Ext.calendar.form.field.ReminderCombo', {
     extend: 'Ext.form.field.ComboBox',
     alias: 'widget.reminderfield',
 
-    width: 200,
     fieldLabel: 'Reminder',
     queryMode: 'local',
     triggerAction: 'all',

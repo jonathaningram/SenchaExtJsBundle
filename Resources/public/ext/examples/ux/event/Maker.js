@@ -1,3 +1,6 @@
+/**
+ * Event maker.
+ */
 Ext.define('Ext.ux.event.Maker', {
 
     eventQueue: [],

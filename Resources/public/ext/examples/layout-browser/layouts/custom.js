@@ -7,10 +7,11 @@ function getCustomLayouts() {
             id: 'center-panel',
             layout: 'ux.center',
             items: {
-                title: 'Centered Panel: 75% of container width and fit height',
+                title: 'Centered Panel: 75% of container width and 95% height',
                 layout: 'ux.center',
                 autoScroll: true,
-                widthRatio: 0.75,
+                width: '75%',
+                height: '95%',
                 bodyStyle: 'padding:20px 0;',
                 items: [{
                     title: 'Inner Centered Panel',

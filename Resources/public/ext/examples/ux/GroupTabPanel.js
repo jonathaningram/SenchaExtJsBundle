@@ -299,7 +299,7 @@ Ext.define('Ext.ux.GroupTabPanel', {
 
     /**
      * Returns the item that is currently active inside this GroupTabPanel.
-     * @return {Ext.Component/Integer} The currently active item
+     * @return {Ext.Component/Number} The currently active item
      */
     getActiveTab: function() {
         return this.activeTab;
@@ -307,7 +307,7 @@ Ext.define('Ext.ux.GroupTabPanel', {
 
     /**
      * Returns the root group item that is currently active inside this GroupTabPanel.
-     * @return {Ext.Component/Integer} The currently active root group item
+     * @return {Ext.Component/Number} The currently active root group item
      */
     getActiveGroup: function() {
         return this.activeGroup;

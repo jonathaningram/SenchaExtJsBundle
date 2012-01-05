@@ -1,3 +1,7 @@
+/**
+ * @extends Ext.ux.event.Driver
+ * Event recorder.
+ */
 Ext.define('Ext.ux.event.Recorder', function () {
     function samePt (pt1, pt2) {
         return pt1.x == pt2.x && pt1.y == pt2.y;

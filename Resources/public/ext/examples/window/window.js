@@ -55,16 +55,7 @@ Ext.onReady(function(){
         closable: false,
         plain: true,
         layout: 'fit',
-        items: [floater = Ext.create('Ext.Component', {
-            xtype: 'component',
-            floating: {
-                shadow: false
-            },
-            height: 50,
-            width: 50,
-            x: 175,
-            y: 75
-        }), constrainedWin = Ext.create('Ext.Window', {
+        items: [constrainedWin = Ext.create('Ext.Window', {
             title: 'Constrained Window',
             width: 100,
             height: 100,
@@ -79,8 +70,8 @@ Ext.onReady(function(){
             title: 'Header-Constrained Win',
             width: 100,
             height: 100,
-            x: 120,
-            y: 120,
+            x: 75,
+            y: 75,
             constrainHeader: true,
             layout: 'fit',
             items: {
@@ -91,7 +82,6 @@ Ext.onReady(function(){
         }]
     });
     win2.show();
-    floater.show();
     constrainedWin.show();
     constrainedWin2.show();
 

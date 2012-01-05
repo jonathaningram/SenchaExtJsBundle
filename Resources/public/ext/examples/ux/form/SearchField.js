@@ -21,7 +21,7 @@ Ext.define('Ext.ux.form.SearchField', {
     
     afterRender: function(){
         this.callParent();
-        this.triggerEl.item(0).setDisplayed('none');  
+        this.triggerCell.item(0).setDisplayed(false);
     },
     
     onTrigger1Click : function(){
@@ -33,10 +33,9 @@ Ext.define('Ext.ux.form.SearchField', {
         if (me.hasSearch) {
             me.setValue('');
             proxy.extraParams[me.paramName] = '';
-            proxy.extraParams.start = 0;
-            store.load();
+            store.loadPage(1);
             me.hasSearch = false;
-            me.triggerEl.item(0).setDisplayed('none');
+            me.triggerCell.item(0).setDisplayed(false);
             me.doComponentLayout();
         }
     },
@@ -52,10 +51,9 @@ Ext.define('Ext.ux.form.SearchField', {
             return;
         }
         proxy.extraParams[me.paramName] = value;
-        proxy.extraParams.start = 0;
-        store.load();
+        store.loadPage(1);
         me.hasSearch = true;
-        me.triggerEl.item(0).setDisplayed('block');
+        me.triggerCell.item(0).setDisplayed(true);
         me.doComponentLayout();
     }
 });

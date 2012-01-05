@@ -34,7 +34,7 @@ Ext.onReady(function () {
                 grid: true,
                 label: {
                     renderer: function(v) {
-                        return String(v).replace(/000000$/, 'M');
+                        return String(v).replace(/(.)00000$/, '.$1M');
                     }
                 },
                 roundToDecimal: false

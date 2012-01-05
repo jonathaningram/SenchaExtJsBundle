@@ -1,102 +1,97 @@
 /**
- * @class Ext.ux.grid.FiltersFeature
- * @extends Ext.grid.Feature
-
-FiltersFeature is a grid {@link Ext.grid.Feature feature} that allows for a slightly more
-robust representation of filtering than what is provided by the default store.
-
-Filtering is adjusted by the user using the grid's column header menu (this menu can be
-disabled through configuration). Through this menu users can configure, enable, and
-disable filters for each column.
-
-#Features#
-
-##Filtering implementations:##
-
-Default filtering for Strings, Numeric Ranges, Date Ranges, Lists (which can be backed by a
-{@link Ext.data.Store}), and Boolean. Additional custom filter types and menus are easily
-created by extending {@link Ext.ux.grid.filter.Filter}.
-
-##Graphical Indicators:##
-
-Columns that are filtered have {@link #filterCls a configurable css class} applied to the column headers.
-
-##Automatic Reconfiguration:##
-
-Filters automatically reconfigure when the grid 'reconfigure' event fires.
-
-##Stateful:##
-
-Filter information will be persisted across page loads by specifying a `stateId`
-in the Grid configuration.
-
-The filter collection binds to the {@link Ext.grid.Panel#beforestaterestore beforestaterestore}
-and {@link Ext.grid.Panel#beforestatesave beforestatesave} events in order to be stateful.
-
-##GridPanel Changes:##
-
-- A `filters` property is added to the GridPanel using this feature.
-- A `filterupdate` event is added to the GridPanel and is fired upon onStateChange completion.
-
-##Server side code examples:##
-
-- [PHP](http://www.vinylfox.com/extjs/grid-filter-php-backend-code.php) - (Thanks VinylFox)</li>
-- [Ruby on Rails](http://extjs.com/forum/showthread.php?p=77326#post77326) - (Thanks Zyclops)</li>
-- [Ruby on Rails](http://extjs.com/forum/showthread.php?p=176596#post176596) - (Thanks Rotomaul)</li>
-- [Python](http://www.debatablybeta.com/posts/using-extjss-grid-filtering-with-django/) - (Thanks Matt)</li>
-- [Grails](http://mcantrell.wordpress.com/2008/08/22/extjs-grids-and-grails/) - (Thanks Mike)</li>
-
-#Example usage:#
-
-    var store = Ext.create('Ext.data.Store', {
-        pageSize: 15
-        ...
-    });
-
-    var filtersCfg = {
-        ftype: 'filters',
-        autoReload: false, //don't reload automatically
-        local: true, //only filter locally
-        // filters may be configured through the plugin,
-        // or in the column definition within the headers configuration
-        filters: [{
-            type: 'numeric',
-            dataIndex: 'id'
-        }, {
-            type: 'string',
-            dataIndex: 'name'
-        }, {
-            type: 'numeric',
-            dataIndex: 'price'
-        }, {
-            type: 'date',
-            dataIndex: 'dateAdded'
-        }, {
-            type: 'list',
-            dataIndex: 'size',
-            options: ['extra small', 'small', 'medium', 'large', 'extra large'],
-            phpMode: true
-        }, {
-            type: 'boolean',
-            dataIndex: 'visible'
-        }]
-    };
-
-    var grid = Ext.create('Ext.grid.Panel', {
-         store: store,
-         columns: ...,
-         filters: [filtersCfg],
-         height: 400,
-         width: 700,
-         bbar: Ext.create('Ext.PagingToolbar', {
-             store: store
-         })
-    });
-
-    // a filters property is added to the GridPanel
-    grid.filters
-
- * @markdown
+ * FiltersFeature is a grid {@link Ext.grid.feature.Feature feature} that allows for a slightly more
+ * robust representation of filtering than what is provided by the default store.
+ *
+ * Filtering is adjusted by the user using the grid's column header menu (this menu can be
+ * disabled through configuration). Through this menu users can configure, enable, and
+ * disable filters for each column.
+ *
+ * #Features#
+ *
+ * ##Filtering implementations:##
+ *
+ * Default filtering for Strings, Numeric Ranges, Date Ranges, Lists (which can be backed by a
+ * {@link Ext.data.Store}), and Boolean. Additional custom filter types and menus are easily
+ * created by extending {@link Ext.ux.grid.filter.Filter}.
+ *
+ * ##Graphical Indicators:##
+ *
+ * Columns that are filtered have {@link #filterCls a configurable css class} applied to the column headers.
+ *
+ * ##Automatic Reconfiguration:##
+ *
+ * Filters automatically reconfigure when the grid 'reconfigure' event fires.
+ *
+ * ##Stateful:##
+ *
+ * Filter information will be persisted across page loads by specifying a `stateId`
+ * in the Grid configuration.
+ *
+ * The filter collection binds to the {@link Ext.grid.Panel#beforestaterestore beforestaterestore}
+ * and {@link Ext.grid.Panel#beforestatesave beforestatesave} events in order to be stateful.
+ *
+ * ##GridPanel Changes:##
+ *
+ * - A `filters` property is added to the GridPanel using this feature.
+ * - A `filterupdate` event is added to the GridPanel and is fired upon onStateChange completion.
+ *
+ * ##Server side code examples:##
+ *
+ * - [PHP](http://www.vinylfox.com/extjs/grid-filter-php-backend-code.php) - (Thanks VinylFox)</li>
+ * - [Ruby on Rails](http://extjs.com/forum/showthread.php?p=77326#post77326) - (Thanks Zyclops)</li>
+ * - [Ruby on Rails](http://extjs.com/forum/showthread.php?p=176596#post176596) - (Thanks Rotomaul)</li>
+ * - [Python](http://www.debatablybeta.com/posts/using-extjss-grid-filtering-with-django/) - (Thanks Matt)</li>
+ * - [Grails](http://mcantrell.wordpress.com/2008/08/22/extjs-grids-and-grails/) - (Thanks Mike)</li>
+ *
+ * #Example usage:#
+ *
+ *     var store = Ext.create('Ext.data.Store', {
+ *         pageSize: 15
+ *         ...
+ *     });
+ *
+ *     var filtersCfg = {
+ *         ftype: 'filters',
+ *         autoReload: false, //don't reload automatically
+ *         local: true, //only filter locally
+ *         // filters may be configured through the plugin,
+ *         // or in the column definition within the headers configuration
+ *         filters: [{
+ *             type: 'numeric',
+ *             dataIndex: 'id'
+ *         }, {
+ *             type: 'string',
+ *             dataIndex: 'name'
+ *         }, {
+ *             type: 'numeric',
+ *             dataIndex: 'price'
+ *         }, {
+ *             type: 'date',
+ *             dataIndex: 'dateAdded'
+ *         }, {
+ *             type: 'list',
+ *             dataIndex: 'size',
+ *             options: ['extra small', 'small', 'medium', 'large', 'extra large'],
+ *             phpMode: true
+ *         }, {
+ *             type: 'boolean',
+ *             dataIndex: 'visible'
+ *         }]
+ *     };
+ *
+ *     var grid = Ext.create('Ext.grid.Panel', {
+ *          store: store,
+ *          columns: ...,
+ *          filters: [filtersCfg],
+ *          height: 400,
+ *          width: 700,
+ *          bbar: Ext.create('Ext.PagingToolbar', {
+ *              store: store
+ *          })
+ *     });
+ *
+ *     // a filters property is added to the GridPanel
+ *     grid.filters
  */
 Ext.define('Ext.ux.grid.FiltersFeature', {
     extend: 'Ext.grid.feature.Feature',
@@ -115,7 +110,7 @@ Ext.define('Ext.ux.grid.FiltersFeature', {
      * @cfg {Boolean} autoReload
      * Defaults to true, reloading the datasource when a filter change happens.
      * Set this to false to prevent the datastore from being reloaded if there
-     * are changes to the filters.  See <code>{@link updateBuffer}</code>.
+     * are changes to the filters.  See <code>{@link #updateBuffer}</code>.
      */
     autoReload : true,
     /**
@@ -165,7 +160,7 @@ Ext.define('Ext.ux.grid.FiltersFeature', {
      */
     stateId : undefined,
     /**
-     * @cfg {Integer} updateBuffer
+     * @cfg {Number} updateBuffer
      * Number of milliseconds to defer store updates since the last filter change.
      */
     updateBuffer : 500,
@@ -402,7 +397,7 @@ Ext.define('Ext.ux.grid.FiltersFeature', {
 
     /**
      * Changes the data store bound to this view and refreshes it.
-     * @param {Store} store The store to bind to this view
+     * @param {Ext.data.Store} store The store to bind to this view
      */
     bindStore : function(store, initial){
         if(!initial && this.store){
@@ -715,7 +710,7 @@ filters[0][data][value]="someValue3"&
      * loader to provide dynamic filter loading.
      * @param {String} type The type of filter to load ('Filter' is automatically
      * appended to the passed type; eg, 'string' becomes 'StringFilter').
-     * @return {Class} The Ext.ux.grid.filter.Class
+     * @return {Function} The Ext.ux.grid.filter.Class
      */
     getFilterClass : function (type) {
         // map the supported Ext.data.Field type values into a supported filter

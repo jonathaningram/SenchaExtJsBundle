@@ -60,16 +60,16 @@ Ext.define('Ext.ux.RowExpander', {
     /**
      * @event expandbody
      * <b<Fired through the grid's View</b>
-     * @param {HtmlElement} rowNode The &lt;tr> element which owns the expanded row.
+     * @param {HTMLElement} rowNode The &lt;tr> element which owns the expanded row.
      * @param {Ext.data.Model} record The record providing the data.
-     * @param {HtmlElement} expandRow The &lt;tr> element containing the expanded data.
+     * @param {HTMLElement} expandRow The &lt;tr> element containing the expanded data.
      */
     /**
      * @event collapsebody
      * <b<Fired through the grid's View.</b>
-     * @param {HtmlElement} rowNode The &lt;tr> element which owns the expanded row.
+     * @param {HTMLElement} rowNode The &lt;tr> element which owns the expanded row.
      * @param {Ext.data.Model} record The record providing the data.
-     * @param {HtmlElement} expandRow The &lt;tr> element containing the expanded data.
+     * @param {HTMLElement} expandRow The &lt;tr> element containing the expanded data.
      */
 
     constructor: function() {

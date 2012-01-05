@@ -35,10 +35,7 @@ Ext.onReady(function(){
             data = [],
             s = new Date(2007, 0, 1),
             now = new Date(),
-
-            getRandomInt = function(min, max) {
-                return Math.floor(Math.random() * (max - min + 1)) + min;
-            },
+            getRandomInt = Ext.Number.randomInt,
 
             generateName = function() {
                 var name = firsts[getRandomInt(0, firstLen - 1)] + ' ' + lasts[getRandomInt(0, lastLen - 1)];

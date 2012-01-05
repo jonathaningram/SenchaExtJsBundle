@@ -117,9 +117,18 @@
 .ext-cal-dayview .ext-cal-gutter-rt {
     width: 15px;
 }
-.ext-ie .ext-cal-dayview .ext-cal-gutter-rt {
+.x-win .ext-cal-dayview .ext-cal-gutter-rt {
     width: 16px;
 }
+/* OSX Lion scrollbars do not take up space in the body so they need special rules */
+.x-no-scrollbar .ext-cal-hd-days-td {
+    width: 100%;
+}
+.x-no-scrollbar .ext-cal-dayview .ext-cal-gutter-rt,
+.x-no-scrollbar .x-win .ext-cal-dayview .ext-cal-gutter-rt {
+    width: 0;
+}
+
 .ext-cal-hd-ad {
     background-color: #fff;
     font-size: 11px;
@@ -175,8 +184,8 @@
     position: absolute;
     width: 100%;
 }
-.ext-ie .ext-cal-dayview .ext-cal-bg-rows-inner,
-.ext-gecko .ext-cal-dayview .ext-cal-bg-rows-inner {
+.x-ie .ext-cal-dayview .ext-cal-bg-rows-inner,
+.x-gecko .ext-cal-dayview .ext-cal-bg-rows-inner {
     top: -1; /* row line alignment fix */
 }
 .ext-cal-dayview .ext-cal-bg-row {
@@ -217,11 +226,11 @@
     margin-right: 15px;
     height: 1008px;
 }
-.ext-ie .ext-cal-day-col-gutter,
-.ext-opera .ext-cal-day-col-gutter {
+.x-ie .ext-cal-day-col-gutter,
+.x-opera .ext-cal-day-col-gutter {
     margin-right: 10px;
 }
-.ext-ie6 .ext-cal-day-col-gutter {
+.x-ie6 .ext-cal-day-col-gutter {
     zoom: 1
 }
 
@@ -457,7 +466,7 @@ td.ext-cal-dtitle-today div {
     border-width: 0 1px;
     border-style: solid;
 }
-.ext-ie6 .ext-cal-evt dl {
+.x-ie6 .ext-cal-evt dl {
     zoom: 1
 }
 .ext-cal-evt dd {
@@ -489,8 +498,8 @@ td.ext-cal-dtitle-today div {
     border-top-width: 1px;
     border-top-style: solid;
 }
-.ext-opera .ext-cal-evb,
-.ext-strict .ext-ie .ext-cal-evb {
+.x-opera .ext-cal-evb,
+.x-strict .x-ie .ext-cal-evb {
     height: 0;
 }
 
@@ -551,7 +560,7 @@ td.ext-cal-dtitle-today div {
     background-position:0 -11px;
     right: -2px;
 }
-.ext-ie .ext-cal-spr {
+.x-ie .ext-cal-spr {
     right: -5px;
 }
 
@@ -635,8 +644,8 @@ td.ext-cal-dtitle-today div {
     text-align: center; /* needed for IE quirks mode */
     cursor: s-resize;
 }
-.ext-gecko .ext-evt-rsz,
-.ext-webkit .ext-evt-rsz {
+.x-gecko .ext-evt-rsz,
+.x-webkit .ext-evt-rsz {
     cursor: ns-resize;
 }
 .ext-evt-rsz-h {
@@ -657,10 +666,10 @@ td.ext-cal-dtitle-today div {
 .ext-evt-over .ext-evt-rsz-h {
     display: block;
 }
-.ext-ie .ext-evt-rsz-h {
+.x-ie .ext-evt-rsz-h {
     border-color: #ccc;
 }
-.ext-strict .ext-ie8 .ext-evt-rsz-h {
+.x-strict .x-ie8 .ext-evt-rsz-h {
     border-color: #fff;
     filter:alpha(opacity=50);
 }
@@ -675,8 +684,8 @@ td.ext-cal-dtitle-today div {
 }
 
 .ext-color-1,
-.ext-ie .ext-color-1-ad,
-.ext-opera .ext-color-1-ad {
+.x-ie .ext-color-1-ad,
+.x-opera .ext-color-1-ad {
 	color: #306da6;
 }
 .ext-cal-day-col .ext-color-1,
@@ -696,8 +705,8 @@ td.ext-cal-dtitle-today div {
 }
 
 .ext-color-2,
-.ext-ie .ext-color-2-ad,
-.ext-opera .ext-color-2-ad {
+.x-ie .ext-color-2-ad,
+.x-opera .ext-color-2-ad {
 	color: #86a723;
 }
 .ext-cal-day-col .ext-color-2,
@@ -716,8 +725,8 @@ td.ext-cal-dtitle-today div {
     border-color: #86a723;
 }
 .ext-color-3,
-.ext-ie .ext-color-3-ad,
-.ext-opera .ext-color-3-ad {
+.x-ie .ext-color-3-ad,
+.x-opera .ext-color-3-ad {
     color: #b6a980;
 }
 .ext-cal-day-col .ext-color-3,
@@ -844,7 +853,7 @@ td.ext-cal-dtitle-today div {
  * Calendar form styles
  *
  ******************************************/
-.ext-gecko .ext-cal-event-win .x-window-body .x-form-item {
+.x-gecko .ext-cal-event-win .x-window-body .x-form-item {
     overflow: hidden;
 }
 .ext-evt-edit-form .x-form-item {

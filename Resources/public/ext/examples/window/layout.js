@@ -18,8 +18,10 @@ Ext.onReady(function(){
                 width: 600,
                 minWidth: 350,
                 height: 350,
-                layout: 'border',
-                bodyStyle: 'padding: 5px;',
+                layout: {
+                    type: 'border',
+                    padding: 5
+                },
                 items: [{
                     region: 'west',
                     title: 'Navigation',

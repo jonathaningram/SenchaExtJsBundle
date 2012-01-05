@@ -49,7 +49,8 @@ Ext.onReady(function () {
                     width: 74,
                     height: 38,
                     renderer: function(storeItem, item) {
-                        this.setTitle(storeItem.get('name') + '<br />' + storeItem.get('data1'));
+                        this.setTitle(storeItem.get('name'));
+                        this.update(storeItem.get('data1'));
                     }
                 },
                 style: {

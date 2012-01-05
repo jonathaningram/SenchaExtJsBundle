@@ -18,6 +18,7 @@ Ext.define('KitchenSink.view.examples.grids.GroupedGrid', {
             
             features: [
                 Ext.create('Ext.grid.feature.Grouping',{
+                    hideGroupedHeader: true,
                     groupHeaderTpl: 'Cuisine: {name} ({rows.length} Item{[values.rows.length > 1 ? "s" : ""]})'
                 })
             ]

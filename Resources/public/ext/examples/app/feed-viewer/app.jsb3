@@ -261,7 +261,15 @@
                 },
                 {
                     "path": "../../../../platform/src/fx/target/",
+                    "name": "ElementCSS.js"
+                },
+                {
+                    "path": "../../../../platform/src/fx/target/",
                     "name": "CompositeElement.js"
+                },
+                {
+                    "path": "../../../../platform/src/fx/target/",
+                    "name": "CompositeElementCSS.js"
                 },
                 {
                     "path": "../../../../platform/src/fx/target/",
@@ -300,14 +308,6 @@
                     "name": "StatusProxy.js"
                 },
                 {
-                    "path": "../../../../platform/src/util/",
-                    "name": "Region.js"
-                },
-                {
-                    "path": "../../../src/dd/",
-                    "name": "DragDropManager.js"
-                },
-                {
                     "path": "../../../../platform/src/layout/",
                     "name": "Layout.js"
                 },
@@ -316,16 +316,16 @@
                     "name": "Component.js"
                 },
                 {
-                    "path": "../../../../platform/src/layout/component/",
-                    "name": "AbstractDock.js"
-                },
-                {
                     "path": "../../../src/layout/component/",
                     "name": "Dock.js"
                 },
                 {
-                    "path": "../../../src/layout/component/",
-                    "name": "Tip.js"
+                    "path": "../../../../platform/src/util/",
+                    "name": "Region.js"
+                },
+                {
+                    "path": "../../../src/dd/",
+                    "name": "DragDropManager.js"
                 },
                 {
                     "path": "../../../src/layout/container/",
@@ -536,7 +536,7 @@
                     "name": "KeyNav.js"
                 },
                 {
-                    "path": "../../../src/focus/",
+                    "path": "../../../src/",
                     "name": "FocusManager.js"
                 },
                 {

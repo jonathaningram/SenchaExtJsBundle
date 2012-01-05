@@ -24,7 +24,7 @@ Ext.define('KitchenSink.store.TreeStore', {
                 children: [
                     { leaf:true, text: 'ButtonGroup.js' },
                     { leaf:true, text: 'Container.js' },
-                    { leaf:true, text: 'Viewport.js' },
+                    { leaf:true, text: 'Viewport.js' }
                 ]
             },
             {
@@ -36,7 +36,7 @@ Ext.define('KitchenSink.store.TreeStore', {
                             { leaf:true, text: 'Element.form.js' },
                             { leaf:true, text: 'Element.static-more.js' }
                         ]
-                    },
+                    }
                 ]
             },
             {
@@ -54,7 +54,7 @@ Ext.define('KitchenSink.store.TreeStore', {
                     { leaf:true, text: 'DragZone.js' },
                     { leaf:true, text: 'Registry.js' },
                     { leaf:true, text: 'ScrollManager.js' },
-                    { leaf:true, text: 'StatusProxy.js' },
+                    { leaf:true, text: 'StatusProxy.js' }
                 ]
             },
             {
@@ -70,7 +70,7 @@ Ext.define('KitchenSink.store.TreeStore', {
                     { leaf:true, text: 'Element.style.js' },
                     { leaf:true, text: 'Element.traversal.js' },
                     { leaf:true, text: 'Helper.js' },
-                    { leaf:true, text: 'Query.js' },
+                    { leaf:true, text: 'Query.js' }
                 ]
             },
             { leaf:true, text: 'Action.js' },

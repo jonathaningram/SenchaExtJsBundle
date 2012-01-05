@@ -15,6 +15,7 @@ Ext.define('FeedViewer.FeedWindow', {
     alias: 'widget.feedwindow',
 
     plain: true,
+    resizable: false,
 
     defaultFeeds: [
         ['http://rss.cnn.com/rss/edition.rss', 'CNN Top Stories'],

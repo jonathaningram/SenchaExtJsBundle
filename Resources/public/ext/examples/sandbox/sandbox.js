@@ -55,7 +55,9 @@ Ext4.onReady(function() {
         data: generateData(processArray)
     });
 
-    cpuLoadStore = Ext4.create('store.json', { fields: ['core1', 'core2'] });
+    cpuLoadStore = Ext4.create('store.json', { 
+      fields: ['core1', 'core2', 'time'] 
+    });
 
     data = [];
 
@@ -265,7 +267,7 @@ Ext4.onReady(function() {
             lineWidth: 4,
             showMarkers: false,
             fill: true,
-            axis: 'right',
+            axis: ['left'],
             xField: 'time',
             yField: 'core1',
             style: {
@@ -304,7 +306,7 @@ Ext4.onReady(function() {
             lineWidth: 4,
             showMarkers: false,
             fill: true,
-            axis: 'right',
+            axis: ['left'],
             xField: 'time',
             yField: 'core2',
             style: {

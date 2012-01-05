@@ -1,9 +1,8 @@
 /**
  * @author Don Griffin
- * @class Ext.ux.ajax.SimXhr
  *
  * Simulates an XMLHttpRequest object's methods and properties but is backed by a
- * {@link Simlet} instance that provides the data.
+ * {@link Ext.ux.ajax.Simlet} instance that provides the data.
  */
 Ext.define('Ext.ux.ajax.SimXhr', {
     readyState: 0,
@@ -92,10 +91,17 @@ Ext.define('Ext.ux.ajax.SimXhr', {
     onreadystatechange: Ext.emptyFn,
 
     onComplete: function () {
-        var me = this;
+        var me = this,
+            callback;
 
         me.readyState = 4;
         Ext.apply(me, me.simlet.exec(me));
+
+        callback = me.jsonpCallback;
+        if (callback) {
+            var text = callback + '(' + me.responseText + ')';
+            eval(text);
+        }
     },
 
     onTick: function () {

@@ -524,7 +524,7 @@ Ext.define('Ext.calendar.view.AbstractCalendar', {
 
     doAddFx: function(els, o) {
         els.fadeIn(Ext.apply(o, {
-            duration: 2
+            duration: 2000
         }));
     },
 

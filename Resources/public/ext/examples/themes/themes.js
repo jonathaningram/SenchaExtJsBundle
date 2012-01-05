@@ -42,7 +42,7 @@ function getBasicPanel () {
     return {
         xtype: 'panel',
 
-        x: 50, y: 80,
+        x: 20, y: 20,
 
         width : 150,
         height: 90,
@@ -59,7 +59,7 @@ function getCollapsedPanel () {
     return {
         xtype: 'panel',
 
-        x: 50, y: 180,
+        x: 20, y: 120,
 
         width : 150,
         height: 70,
@@ -78,7 +78,7 @@ function getMaskedPanel (rtl) {
     return Ext.createWidget({
         xtype: 'panel',
 
-        x: 210, y: 80,
+        x: 180, y: 20,
 
         width : 130,
         height: 170,
@@ -97,7 +97,7 @@ function getFramedPanel () {
     return {
         xtype: 'panel',
 
-        x: 350, y: 80,
+        x: 320, y: 20,
 
         width : 170,
         height: 100,
@@ -135,7 +135,7 @@ function getCollapsedFramedPanel () {
     return {
         xtype: 'panel',
 
-        x: 350, y: 190,
+        x: 320, y: 130,
 
         width : 170,
         height: 60,
@@ -180,7 +180,7 @@ function getPanelWithToolbars () {
         xtype: 'panel',
         id: 'panelWithToolbars',
 
-        x: 690, y: 80,
+        x: 660, y: 20,
 
         width : 450,
         height: 170,
@@ -219,7 +219,7 @@ function getPanelWithToolbars () {
         bbar: {
             id: 'panelWithToolbars_bbar',
             items: [
-                'Toolbar &amp; Menus',
+                'Toolbar',
                 ' ',
                 '-',
                 {text: 'Button'},
@@ -285,10 +285,10 @@ function getFormWidgets () {
         id   : 'form-widgets',
         title: 'Form Widgets',
 
-        x: 50, y: 260,
+        x: 20, y: 200,
 
         width : 630,
-        height: 700,
+        height: 750,
         rtl: rtl,
 
         frame: true,
@@ -454,7 +454,7 @@ function getBorderLayout() {
         height: 350,
         rtl: rtl,
 
-        x: 690, y: 260,
+        x: 660, y: 200,
 
         title : 'BorderLayout Panel',
         layout: {
@@ -556,7 +556,7 @@ function getGrid () {
         width : 450,
         rtl: rtl,
 
-        x: 690, y: 620,
+        x: 660, y: 560,
 
         title: 'GridPanel',
         collapsible: true,
@@ -618,7 +618,7 @@ function getAccordion () {
         collapsible: true,
         layout: 'accordion',
 
-        x: 690, y: 830,
+        x: 660, y: 770,
 
         width : 450,
         height: 240,
@@ -673,7 +673,7 @@ function getTabs (config) {
 
 function getScrollingTabs () {
     return getTabs({
-        x: 50, y: 970,
+        x: 20, y: 960,
 
         enableTabScroll: true,
 
@@ -714,7 +714,7 @@ function getScrollingTabs () {
 function getPlainTabs () {
     return getTabs({
         plain: true,
-        x    : 370, y: 970
+        x    : 340, y: 960
     });
 }
 
@@ -722,13 +722,13 @@ function getDatePicker () {
     return {
         xtype: 'panel',
 
-        x: 50, y: 1130,
+        x: 20, y: 1120,
 
-        border: false,
         width : 180,
         rtl: rtl,
-
+        border: false,
         items: {
+            border: true,
             xtype: 'datepicker'
         }
     };
@@ -742,6 +742,7 @@ function getProgressBar () {
     if (!hasOption('nopbar')) {
         setTimeout(function() {
             progressbar.wait({
+                //animate: true,
                 text: 'Progress text...'
             });
         }, 7000);
@@ -751,7 +752,7 @@ function getProgressBar () {
         xtype: 'panel',
         title: 'ProgressBar / Slider',
 
-        x: 690, y: 1080,
+        x: 660, y: 1020,
 
         width: 450,
         height: 200,
@@ -784,9 +785,9 @@ function getProgressBar () {
 
 function getFramedGrid () {
     return {
-        width:250,
+        width: 450,
         height:182,
-        x: 430, y: 1130,
+        x: 660, y: 1230,
         rtl: rtl,
         xtype: 'grid',
         title: 'Framed Grid',
@@ -808,7 +809,7 @@ function getFramedGrid () {
 function getBasicWindow () {
     return Ext.createWidget('window', {
         id: 'basicWindow',
-        x: 530, y: 80,
+        x: 500, y: 20,
         hidden: false,
         width   : 150,
         height  : 170,
@@ -844,14 +845,12 @@ function getBasicWindow () {
     });
 }
 
-function addResizer () {
-    var rszEl = Ext.getBody().createChild({
-        style: 'background: transparent;',
+function addResizer(containerEl) {
+    var rszEl = containerEl.createChild({
+        style: 'background: transparent;position:absolute;left:210px;top:1120px;width:440px;height:200px',
         html: '<div style="padding:20px;">Resizable handles</div>'
     });
 
-    rszEl.position('absolute', 1, 240, 1130);
-    rszEl.setSize(180, 180);
     Ext.create('Ext.resizer.Resizer', {
         id: 'resizer',
         el: rszEl,
@@ -862,7 +861,7 @@ function addResizer () {
 
 function addFormWindow () {
     Ext.createWidget('window', {
-        x: 690, y: 1290,
+        x: 660, y: 1230,
 
         width   : 450,
         // height  : 360,
@@ -960,7 +959,8 @@ function addFormWindow () {
 
 function doThemes (rtl) {
     var time = Ext.perf.getTimestamp(),
-        maskedPanel;
+        maskedPanel,
+        mainContainer;
 
     if (hasOption('nocss3')) {
         Ext.supports.CSS3BorderRadius = false;
@@ -983,16 +983,21 @@ function doThemes (rtl) {
         getPlainTabs(rtl),
         getDatePicker(rtl),
         getProgressBar(rtl),
-        getFramedGrid(rtl)
+        getFramedGrid(rtl),
+        0 // end of list (makes commenting out any of the above easy
     ];
+    items.pop(); // remove the 0 on the end
 
-    Ext.create('Ext.container.Viewport', {
+    mainContainer = Ext.create('Ext.container.Container', {
+        id: 'main-container',
+        renderTo: document.body,
+        height: 1460,
+        width: 1130,
         layout: 'absolute',
-        autoScroll: true,
         items: items
     });
         
-    addResizer();
+    addResizer(mainContainer.el);
     //addFormWindow();
 
     /**
@@ -1009,7 +1014,14 @@ function doThemes (rtl) {
     });
 
     setTimeout(function() {
-        maskedPanel.body.mask('Loading...');
+        // we may comment out the creation of this for testing
+        if (maskedPanel) {
+            maskedPanel.setLoading({
+                msg: 'Loading...',
+                useTargetEl: true
+            });
+        }
+        
         if (!hasOption('notips')) {
             Ext.QuickTips.init();
         }

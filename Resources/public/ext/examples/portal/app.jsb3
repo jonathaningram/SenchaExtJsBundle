@@ -225,10 +225,6 @@
                 },
                 {
                     "path": "../../src/layout/container/",
-                    "name": "CheckboxGroup.js"
-                },
-                {
-                    "path": "../../src/layout/container/",
                     "name": "Column.js"
                 },
                 {
@@ -242,6 +238,10 @@
                 {
                     "path": "../../src/layout/container/",
                     "name": "Card.js"
+                },
+                {
+                    "path": "../../src/layout/container/",
+                    "name": "Form.js"
                 },
                 {
                     "path": "../../src/layout/container/",
@@ -277,11 +277,23 @@
                 },
                 {
                     "path": "../../../platform/src/fx/target/",
+                    "name": "ElementCSS.js"
+                },
+                {
+                    "path": "../../../platform/src/fx/target/",
                     "name": "CompositeElement.js"
+                },
+                {
+                    "path": "../../../platform/src/fx/target/",
+                    "name": "CompositeElementCSS.js"
                 },
                 {
                     "path": "../../../platform/src/layout/component/",
                     "name": "Component.js"
+                },
+                {
+                    "path": "../../src/layout/component/",
+                    "name": "Dock.js"
                 },
                 {
                     "path": "../../../platform/src/layout/component/",
@@ -294,14 +306,6 @@
                 {
                     "path": "../../src/layout/component/",
                     "name": "Button.js"
-                },
-                {
-                    "path": "../../../platform/src/layout/component/",
-                    "name": "AbstractDock.js"
-                },
-                {
-                    "path": "../../src/layout/component/",
-                    "name": "Dock.js"
                 },
                 {
                     "path": "../../src/dd/",
@@ -445,6 +449,10 @@
                 },
                 {
                     "path": "../../src/layout/container/",
+                    "name": "CheckboxGroup.js"
+                },
+                {
+                    "path": "../../src/layout/container/",
                     "name": "VBox.js"
                 },
                 {
@@ -516,6 +524,14 @@
                     "name": "Table.js"
                 },
                 {
+                    "path": "../../src/tip/",
+                    "name": "Tip.js"
+                },
+                {
+                    "path": "../../src/tip/",
+                    "name": "ToolTip.js"
+                },
+                {
                     "path": "../../../platform/src/data/",
                     "name": "Types.js"
                 },
@@ -526,18 +542,6 @@
                 {
                     "path": "../../../platform/src/",
                     "name": "Ajax.js"
-                },
-                {
-                    "path": "../../src/layout/component/",
-                    "name": "Tip.js"
-                },
-                {
-                    "path": "../../src/tip/",
-                    "name": "Tip.js"
-                },
-                {
-                    "path": "../../src/tip/",
-                    "name": "ToolTip.js"
                 },
                 {
                     "path": "../../../platform/src/layout/component/",
@@ -788,7 +792,7 @@
                     "name": "ClassList.js"
                 },
                 {
-                    "path": "../../src/focus/",
+                    "path": "../../src/",
                     "name": "FocusManager.js"
                 },
                 {

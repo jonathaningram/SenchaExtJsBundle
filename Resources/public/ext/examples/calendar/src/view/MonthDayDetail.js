@@ -19,10 +19,6 @@ Ext.define('Ext.calendar.view.MonthDayDetail', {
         this.addEvents({
             eventsrendered: true
         });
-        
-        if (!this.el) {
-            this.el = document.createElement('div');
-        }
     },
 
     afterRender: function() {
@@ -41,15 +37,15 @@ Ext.define('Ext.calendar.view.MonthDayDetail', {
     getTemplate: function() {
         if (!this.tpl) {
             this.tpl = new Ext.XTemplate(
-            '<div class="ext-cal-mdv x-unselectable">',
-            '<table class="ext-cal-mvd-tbl" cellpadding="0" cellspacing="0">',
-            '<tbody>',
-            '<tpl for=".">',
-            '<tr><td class="ext-cal-ev">{markup}</td></tr>',
-            '</tpl>',
-            '</tbody>',
-            '</table>',
-            '</div>'
+                '<div class="ext-cal-mdv x-unselectable">',
+                    '<table class="ext-cal-mvd-tbl" cellpadding="0" cellspacing="0">',
+                        '<tbody>',
+                            '<tpl for=".">',
+                                '<tr><td class="ext-cal-ev">{markup}</td></tr>',
+                            '</tpl>',
+                        '</tbody>',
+                    '</table>',
+                '</div>'
             );
         }
         this.tpl.compile();

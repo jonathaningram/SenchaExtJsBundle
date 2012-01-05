@@ -129,6 +129,7 @@ Ext.onReady(function(){
             }],
         stripeRows: true,
         height:320,
+        minHeight: 160,
         width:600,
         frame:true,
         resizable: {

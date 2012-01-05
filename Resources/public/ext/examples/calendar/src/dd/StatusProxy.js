@@ -7,6 +7,7 @@
  * @param {Object} config
  */
 Ext.define('Ext.calendar.dd.StatusProxy', {
+    
     extend: 'Ext.dd.StatusProxy',
     
     /**
@@ -14,36 +15,27 @@ Ext.define('Ext.calendar.dd.StatusProxy', {
      * The CSS class to apply to the status element when an event is being dragged (defaults to 'ext-cal-dd-move').
      */
     moveEventCls : 'ext-cal-dd-move',
+    
     /**
      * @cfg {String} addEventCls
      * The CSS class to apply to the status element when drop is not allowed (defaults to 'ext-cal-dd-add').
      */
     addEventCls : 'ext-cal-dd-add',
     
-    // private
-    constructor: function(config){
-        Ext.apply(this, config);
-        this.id = this.id || Ext.id();
-        this.proxy = Ext.createWidget('component', {
-            floating: true,
-            id: this.id,
-            html: '<div class="' + Ext.baseCSSPrefix + 'dd-drop-icon"></div>' +
-                  '<div class="ext-dd-ghost-ct"><div class="' + Ext.baseCSSPrefix + 'dd-drag-ghost"></div>' +
-                  '<div class="ext-dd-msg"></div></div>',
-            cls: Ext.baseCSSPrefix + 'dd-drag-proxy ' + this.dropNotAllowed,
-            shadow: !config || config.shadow !== false,
-            renderTo: document.body
-        });
-
-        this.el = this.proxy.el;
-        this.el.show();
-        this.el.setVisibilityMode(Ext.core.Element.VISIBILITY);
-        this.el.hide();
-
-        this.ghost = Ext.get(this.el.dom.childNodes[1].childNodes[0]);
-        this.message = Ext.get(this.el.dom.childNodes[1].childNodes[1]);
-        this.dropStatus = this.dropNotAllowed;
-    },
+    // inherit docs
+    childEls: [
+        'ghost',
+        'message'
+    ],
+    
+    // inherit docs
+    renderTpl: [
+        '<div class="' + Ext.baseCSSPrefix + 'dd-drop-icon"></div>' +
+        '<div class="ext-dd-ghost-ct">' +
+            '<div id="{id}-ghost" class="' + Ext.baseCSSPrefix + 'dd-drag-ghost"></div>' +
+            '<div id="{id}-message" class="' + Ext.baseCSSPrefix + 'dd-msg"></div>' +
+        '</div>'
+    ],
 
     // inherit docs
     update : function(html){
@@ -51,6 +43,8 @@ Ext.define('Ext.calendar.dd.StatusProxy', {
         
         var el = this.ghost.dom.firstChild;
         if(el){
+            // if the ghost contains an event clone (from dragging an existing event)
+            // set it to auto height to ensure visual consistency
             Ext.fly(el).setHeight('auto');
         }
     },

@@ -1,4 +1,4 @@
-Ext.require(['*']);
+Ext.require(['Ext.window.Window', 'Ext.toolbar.Toolbar', 'Ext.menu.ColorPicker']);
 Ext.onReady(function(){
 
     var handleAction = function(action){
@@ -11,7 +11,7 @@ Ext.onReady(function(){
         }
     });
 
-    Ext.create('Ext.Window', {
+    Ext.create('Ext.window.Window', {
         title: 'Standard',
         closable: false,
         height:250,

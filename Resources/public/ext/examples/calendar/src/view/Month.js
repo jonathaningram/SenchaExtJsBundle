@@ -197,16 +197,16 @@ Ext.define('Ext.calendar.view.Month', {
         if (!this.eventBodyMarkup) {
             this.eventBodyMarkup = ['{Title}',
             '<tpl if="_isReminder">',
-            '<i class="ext-cal-ic ext-cal-ic-rem">&nbsp;</i>',
+                '<i class="ext-cal-ic ext-cal-ic-rem">&nbsp;</i>',
             '</tpl>',
             '<tpl if="_isRecurring">',
-            '<i class="ext-cal-ic ext-cal-ic-rcr">&nbsp;</i>',
+                '<i class="ext-cal-ic ext-cal-ic-rcr">&nbsp;</i>',
             '</tpl>',
             '<tpl if="spanLeft">',
-            '<i class="ext-cal-spl">&nbsp;</i>',
+                '<i class="ext-cal-spl">&nbsp;</i>',
             '</tpl>',
             '<tpl if="spanRight">',
-            '<i class="ext-cal-spr">&nbsp;</i>',
+                '<i class="ext-cal-spr">&nbsp;</i>',
             '</tpl>'
             ].join('');
         }
@@ -221,25 +221,25 @@ Ext.define('Ext.calendar.view.Month', {
 
             tpl = !(Ext.isIE || Ext.isOpera) ?
             new Ext.XTemplate(
-            '<div id="{_elId}" class="{_selectorCls} {_colorCls} {spanCls} ext-cal-evt ext-cal-evr">',
-            body,
-            '</div>'
+                '<div id="{_elId}" class="{_selectorCls} {_colorCls} {spanCls} ext-cal-evt ext-cal-evr">',
+                    body,
+                '</div>'
             )
             : new Ext.XTemplate(
-            '<tpl if="_renderAsAllDay">',
-            '<div id="{_elId}" class="{_selectorCls} {spanCls} {_colorCls} ext-cal-evt ext-cal-evo">',
-            '<div class="ext-cal-evm">',
-            '<div class="ext-cal-evi">',
-            '</tpl>',
-            '<tpl if="!_renderAsAllDay">',
-            '<div id="{_elId}" class="{_selectorCls} {_colorCls} ext-cal-evt ext-cal-evr">',
-            '</tpl>',
-            body,
-            '<tpl if="_renderAsAllDay">',
-            '</div>',
-            '</div>',
-            '</tpl>',
-            '</div>'
+                '<tpl if="_renderAsAllDay">',
+                    '<div id="{_elId}" class="{_selectorCls} {spanCls} {_colorCls} ext-cal-evt ext-cal-evo">',
+                        '<div class="ext-cal-evm">',
+                            '<div class="ext-cal-evi">',
+                '</tpl>',
+                '<tpl if="!_renderAsAllDay">',
+                    '<div id="{_elId}" class="{_selectorCls} {_colorCls} ext-cal-evt ext-cal-evr">',
+                '</tpl>',
+                    body,
+                '<tpl if="_renderAsAllDay">',
+                            '</div>',
+                        '</div>',
+                '</tpl>',
+                    '</div>'
             );
             tpl.compile();
             this.eventTpl = tpl;
@@ -383,7 +383,7 @@ Ext.define('Ext.calendar.view.Month', {
     // private
     onMoreClick: function(dt) {
         if (!this.detailPanel) {
-            this.detailPanel = new Ext.Panel({
+            this.detailPanel = Ext.create('Ext.Panel', {
                 id: this.id + '-details-panel',
                 title: Ext.Date.format(dt, 'F j'),
                 layout: 'fit',

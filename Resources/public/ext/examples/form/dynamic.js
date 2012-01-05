@@ -15,9 +15,11 @@ Ext.onReady(function() {
      */
     bd.createChild({tag: 'h2', html: 'Form 1 - Very Simple'});
 
+    var required = '<span style="color:red;font-weight:bold" data-qtip="Required">*</span>';
 
     var simple = Ext.widget({
         xtype: 'form',
+        layout: 'form',
         collapsible: true,
         id: 'simpleForm',
         url: 'save-form.php',
@@ -30,22 +32,21 @@ Ext.onReady(function() {
             labelWidth: 75
         },
         defaultType: 'textfield',
-        defaults: {
-            anchor: '100%'
-        },
-
         items: [{
             fieldLabel: 'First Name',
+            afterLabelTextTpl: required,
             name: 'first',
             allowBlank:false
         },{
             fieldLabel: 'Last Name',
+            afterLabelTextTpl: required,
             name: 'last'
         },{
             fieldLabel: 'Company',
             name: 'company'
         }, {
             fieldLabel: 'Email',
+            afterLabelTextTpl: required,
             name: 'email',
             vtype:'email'
         }, {
@@ -110,16 +111,19 @@ Ext.onReady(function() {
             },
             items :[{
                 fieldLabel: 'First Name',
+                afterLabelTextTpl: required,
                 name: 'first',
                 allowBlank:false
             },{
                 fieldLabel: 'Last Name',
+                afterLabelTextTpl: required,
                 name: 'last'
             },{
                 fieldLabel: 'Company',
                 name: 'company'
             }, {
                 fieldLabel: 'Email',
+                afterLabelTextTpl: required,
                 name: 'email',
                 vtype:'email'
             }]
@@ -187,8 +191,10 @@ Ext.onReady(function() {
                 items: [{
                     xtype:'textfield',
                     fieldLabel: 'First Name',
+                    afterLabelTextTpl: required,
                     name: 'first',
-                    anchor:'95%'
+                    anchor:'95%',
+                    value: 'Don'
                 }, {
                     xtype:'textfield',
                     fieldLabel: 'Company',
@@ -202,11 +208,14 @@ Ext.onReady(function() {
                 items: [{
                     xtype:'textfield',
                     fieldLabel: 'Last Name',
+                    afterLabelTextTpl: required,
                     name: 'last',
-                    anchor:'100%'
+                    anchor:'100%',
+                    value: 'Griffin'
                 },{
                     xtype:'textfield',
                     fieldLabel: 'Email',
+                    afterLabelTextTpl: required,
                     name: 'email',
                     vtype:'email',
                     anchor:'100%'
@@ -262,10 +271,12 @@ Ext.onReady(function() {
                 items: [{
                     fieldLabel: 'First Name',
                     name: 'first',
+                    afterLabelTextTpl: required,
                     allowBlank:false,
                     value: 'Ed'
                 },{
                     fieldLabel: 'Last Name',
+                    afterLabelTextTpl: required,
                     name: 'last',
                     value: 'Spencer'
                 },{
@@ -274,6 +285,7 @@ Ext.onReady(function() {
                     value: 'Ext JS'
                 }, {
                     fieldLabel: 'Email',
+                    afterLabelTextTpl: required,
                     name: 'email',
                     vtype:'email'
                 }]
@@ -342,6 +354,7 @@ Ext.onReady(function() {
                 defaultType: 'textfield',
                 items: [{
                     fieldLabel: 'First Name',
+                    afterLabelTextTpl: required,
                     name: 'first',
                     anchor:'95%'
                 }, {
@@ -356,10 +369,12 @@ Ext.onReady(function() {
                 defaultType: 'textfield',
                 items: [{
                     fieldLabel: 'Last Name',
+                    afterLabelTextTpl: required,
                     name: 'last',
                     anchor:'95%'
                 },{
                     fieldLabel: 'Email',
+                    afterLabelTextTpl: required,
                     name: 'email',
                     vtype:'email',
                     anchor:'95%'

@@ -1,3 +1,9 @@
+/**
+ * Recorder manager.
+ * Used as a bookmarklet:
+ *
+ *    javascript:void(window.open("../ux/event/RecorderManager.html","recmgr"))
+ */
 Ext.define('Ext.ux.event.RecorderManager', {
     extend: 'Ext.panel.Panel',
 

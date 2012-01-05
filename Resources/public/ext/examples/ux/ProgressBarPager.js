@@ -11,7 +11,7 @@ Ext.define('Ext.ux.ProgressBarPager', {
 
     requires: ['Ext.ProgressBar'],
     /**
-     * @cfg {Integer} width
+     * @cfg {Number} width
      * <p>The default progress bar width.  Default is 225.</p>
     */
     width   : 225,

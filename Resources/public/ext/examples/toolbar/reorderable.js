@@ -12,7 +12,6 @@ Ext.require([
 
 Ext.onReady(function() {
     var toolbar = Ext.createWidget('toolbar', {
-        renderTo: Ext.getBody(),
         defaults: {
             reorderable: true
         },

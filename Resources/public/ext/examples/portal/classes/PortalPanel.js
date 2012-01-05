@@ -63,6 +63,6 @@ Ext.define('Ext.app.PortalPanel', {
         if (this.dd) {
             this.dd.unreg();
         }
-        Ext.app.PortalPanel.superclass.beforeDestroy.call(this);
+        this.callParent();
     }
 });

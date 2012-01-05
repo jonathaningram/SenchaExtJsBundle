@@ -162,7 +162,6 @@ Ext.define('Ext.ux.grid.filter.DateFilter', {
     /**
      * Handler for when the DatePicker for a field fires the 'select' event
      * @param {Ext.picker.Date} picker
-     * @param {Object} picker
      * @param {Object} date
      */
     onMenuSelect : function (picker, date) {

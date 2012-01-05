@@ -58,7 +58,7 @@ Ext.define('Ext.ux.TabScrollerMenu', {
             me.menuButton.on('click', me.showTabsMenu, me);
         }
         me.menuButton.show();
-        result.targetSize.width -= me.menuButton.getWidth();
+        result.reservedSpace += me.menuButton.getWidth();
         return result;
     },
 

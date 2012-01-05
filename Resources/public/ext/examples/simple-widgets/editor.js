@@ -2,11 +2,7 @@ Ext.require([
     'Ext.Editor',
     'Ext.form.Panel',
     'Ext.form.field.ComboBox',
-    'Ext.form.field.Date',
-    'Ext.data.Store',
-    'Ext.data.proxy.Ajax',
-    'Ext.data.reader.Json',
-    'Ext.data.writer.Json'
+    'Ext.form.field.Date'
 ]);
 
 Ext.onReady(function(){
@@ -16,8 +12,10 @@ Ext.onReady(function(){
         height: 400,
         title: 'User Details',
         defaultType: 'textfield',
-        bodyStyle: 'padding: 10px;',
-        labelWidth: 90,
+        bodyPadding: 10,
+        defaults: {
+            labelWidth: 100
+        },
         items: [{
             fieldLabel: 'First Name',
             name: 'firstname'
@@ -43,7 +41,7 @@ Ext.onReady(function(){
                 }, height = form.child('textfield').getHeight();
 
                 var labelEditor = Ext.create('Ext.Editor', Ext.apply({
-                    width: 100,
+                    width: 140,
                     height: height,
                     offsets: [0, 2],
                     alignment: 'l-l',
@@ -59,8 +57,9 @@ Ext.onReady(function(){
                         name: 'labelfield',
                         allowBlank: false,
                         xtype: 'textfield',
-                        width: 90,
-                        selectOnFocus: true
+                        selectOnFocus: true,
+                        maxLength: 20,
+                        enforceMaxLength: true
                     }
                 }, cfg));
                 form.body.on('dblclick', function(e, t){

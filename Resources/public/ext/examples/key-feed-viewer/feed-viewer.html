@@ -5,6 +5,9 @@
     <title>Key Feed Viewer</title>
     <link rel="stylesheet" type="text/css" href="../../resources/css/ext-all.css">
     <link rel="stylesheet" type="text/css" href="Feed-Viewer.css">
+
+    <!-- GC -->
+
 <style type="text/css">
 .x-menu-item img.preview-right, button.preview-right {
     background-image: url(images/preview-right.gif);
@@ -48,9 +51,9 @@
             'Ext.FocusManager',
             'Ext.toolbar.Spacer'
         ]);
-        Ext.onReady(function(){
+        Ext.onReady(function() {
+            new FeedViewer.App();
             Ext.FocusManager.enable(true);
-            var app = new FeedViewer.App();
         });
     </script>
 </head>

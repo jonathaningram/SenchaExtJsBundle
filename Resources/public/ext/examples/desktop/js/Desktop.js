@@ -230,6 +230,7 @@ Ext.define('Ext.ux.desktop.Desktop', {
         var me = this, win = me.windowMenu.theWin;
 
         win.maximize();
+        win.toFront();
     },
 
     onWindowMenuMinimize: function () {

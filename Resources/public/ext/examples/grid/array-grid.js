@@ -69,9 +69,8 @@ Ext.onReady(function() {
         }
         return val;
     }
-
-    // create the data store
-    var store = Ext.create('Ext.data.ArrayStore', {
+    
+    Company = Ext.extend(Ext.data.Model, {
         fields: [
            {name: 'company'},
            {name: 'price',      type: 'float'},
@@ -79,6 +78,12 @@ Ext.onReady(function() {
            {name: 'pctChange',  type: 'float'},
            {name: 'lastChange', type: 'date', dateFormat: 'n/j h:ia'}
         ],
+        idProperty: 'company'
+    });
+
+    // create the data store
+    var store = Ext.create('Ext.data.ArrayStore', {
+        model: Company,
         data: myData
     });
 
@@ -86,6 +91,7 @@ Ext.onReady(function() {
     var grid = Ext.create('Ext.grid.Panel', {
         store: store,
         stateful: true,
+        multiSelect: true,
         stateId: 'stateGrid',
         columns: [
             {
@@ -123,6 +129,8 @@ Ext.onReady(function() {
                 dataIndex: 'lastChange'
             },
             {
+                menuDisabled: true,
+                sortable: false,
                 xtype: 'actioncolumn',
                 width: 50,
                 items: [{
@@ -154,7 +162,8 @@ Ext.onReady(function() {
         title: 'Array Grid',
         renderTo: 'grid-example',
         viewConfig: {
-            stripeRows: true
+            stripeRows: true,
+            enableTextSelection: true
         }
     });
 });

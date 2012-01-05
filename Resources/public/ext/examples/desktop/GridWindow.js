@@ -20,9 +20,7 @@ Ext.define('MyDesktop.GridWindow', {
     init : function(){
         this.launcher = {
             text: 'Grid Window',
-            iconCls:'icon-grid',
-            handler : this.createWindow,
-            scope: this
+            iconCls:'icon-grid'
         };
     },
 
@@ -97,7 +95,6 @@ Ext.define('MyDesktop.GridWindow', {
                 }]
             });
         }
-        win.show();
         return win;
     },
 

@@ -47,7 +47,7 @@ Ext.define('FeedViewer.App', {
             region: 'west',
             collapsible: true,
             width: 225,
-            floatable: false,
+            //floatable: false,
             split: true,
             minWidth: 175,
             feeds: [{

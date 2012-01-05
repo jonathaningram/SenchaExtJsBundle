@@ -7,10 +7,8 @@ Ext.define('KitchenSink.view.examples.forms.Contact', {
         frame: true,
         
         height: 400,
-        layout: {
-            type: 'vbox',
-            align: 'stretch'
-        },
+        width: 400,
+        layout: 'anchor',
         border: false,
         bodyPadding: 10,
         fieldDefaults: {
@@ -19,6 +17,7 @@ Ext.define('KitchenSink.view.examples.forms.Contact', {
             labelStyle: 'font-weight:bold'
         },
         defaults: {
+            anchor: '100%',
             margins: '0 0 10 0'
         },
         items: [{
